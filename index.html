@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Art Portfolio</title>
+  <title>Francesca Fantini</title>
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,14 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== COLOR PALETTE ===== */
     :root {
-      --bg-main: 	#DA70D6;
+      --bg-main: #DA70D6;
       --green-dark: #1B4332;
-      --green-primary: #3A5A40;
       --green-soft: #00FF7F;
       --green-accent: #6BCF9A;
-      --text-main: 	#000000;
+      --text-main: #000000;
       --white: #FFFFFF;
     }
 
@@ -30,19 +28,18 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      height: 100vh;
+      overflow: hidden; /* 🚫 no scrolling */
     }
 
     a {
       text-decoration: none;
-      color: inherit;
     }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      background-image: url("it reflects.png"); /* 🔁 replace with your photo */
+      background-image: url("it reflects.png");
       background-size: cover;
       background-position: center;
       position: relative;
@@ -52,7 +49,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(27, 67, 50, 0.45);
+      background: rgba(0, 0, 0, 0.45);
     }
 
     .hero-content {
@@ -75,131 +72,49 @@
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--green-soft);
       margin-bottom: 40px;
     }
 
-    /* ===== NAV BUTTONS ===== */
+    /* ===== BUTTON MENU ===== */
     .nav-buttons {
       display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      width: 220px;
     }
 
     .nav-buttons a {
-      padding: 12px 22px;
+      padding: 14px;
       border-radius: 30px;
       background-color: var(--white);
       color: var(--green-dark);
       font-size: 0.9rem;
-      font-weight: 500;
+      text-align: center;
       transition: all 0.3s ease;
     }
 
     .nav-buttons a:hover {
       background-color: var(--green-accent);
-      color: var(--green-dark);
       transform: translateY(-2px);
     }
 
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--green-primary);
-      text-align: center;
-    }
-
-    section p {
-      line-height: 1.7;
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: var(--green-dark);
-      color: var(--green-soft);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      body {
+        overflow: auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="hero-content">
       <h1>Francesca Fantini</h1>
       <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
 
       <nav class="nav-buttons">
-        <a href="#bio">Bio</a>
-        <a href="#projects">Projects</a>
-        <a href="#diary">Diary</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===== BIO ===== -->
-  <section id="bio">
-    <h2>Bio</h2>
-    <p>
-      Write a short biography here. Talk about your artistic background,
-      inspirations, and creative vision.
-    </p>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>
-      Describe your main projects, exhibitions, performances, or works.
-    </p>
-  </section>
-
-  <!-- ===== DIARY ===== -->
-  <section id="diary">
-    <h2>Diary</h2>
-    <p>
-      A space for thoughts, process notes, reflections, or artistic research.
-    </p>
-  </section>
-
-  <!-- ===== MEDIA ===== -->
-  <section id="media">
-    <h2>Media</h2>
-    <p>
-      Videos, audio, interviews, photos, or press material.
-    </p>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Email: your@email.com<br>
-      Instagram / YouTube / SoundCloud links
-    </p>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    © 2026 Francesca Fantini — All rights reserved
-  </footer>
-
-</body>
-</html>
+        <a href="bio
