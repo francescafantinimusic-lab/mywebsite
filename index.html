@@ -30,8 +30,6 @@
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
       margin: 0;
-      display: flex;
-      flex-direction: column;
       overflow: hidden; /* no scroll */
     }
 
@@ -41,7 +39,7 @@
 
     /* ===== HERO ===== */
     .hero {
-      flex: 1; /* fill available space */
+      height: 100vh;
       width: 100%;
       background-image: url("it-reflects.png"); /* replace with your image */
       background-size: cover;
@@ -70,4 +68,69 @@
       color: var(--white);
       display: flex;
       flex-direction: column;
-      a
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--green-soft);
+    }
+
+    /* ===== NAV BUTTONS ===== */
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 220px;
+    }
+
+    .nav-buttons a {
+      padding: 12px 22px;
+      border-radius: 30px;
+      background-color: var(--white);
+      color: var(--green-dark);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .nav-buttons a:hover {
+      background-color: var(--green-accent);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== MOBILE ===== */
+    @media(max-width:768px){
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      .nav-buttons { width: 160px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Francesca Fantini</h1>
+      <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
+
+      <nav class="nav-buttons">
+        <a href="bio.html">Bio</a>
+        <a href="projects.html">Projects</a>
+        <a href="diary.html">Diary</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+</body>
+</html>
