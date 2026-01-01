@@ -29,8 +29,9 @@
     body {
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
       margin: 0;
-      overflow: hidden; /* no scroll */
     }
 
     a {
@@ -39,25 +40,25 @@
 
     /* ===== HERO ===== */
     .hero {
-      height: 100vh;
+      position: relative;
       width: 100%;
-      background-image: url("it-reflects.png"); /* replace with your image */
+      height: calc(100vh - 60px); /* leaves space for footer */
+      background-image: url("it-reflects.png"); /* Replace with your image, no spaces */
       background-size: cover;
       background-position: center;
-      position: relative;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
     }
 
-    /* dark overlay */
+    /* overlay */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.35);
       z-index: 1;
     }
 
@@ -106,6 +107,18 @@
       transform: translateY(-2px);
     }
 
+    /* ===== FOOTER ===== */
+    footer {
+      height: 60px;
+      background-color: var(--green-dark);
+      color: var(--green-soft);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
     /* ===== MOBILE ===== */
     @media(max-width:768px){
       .hero-content h1 { font-size: 2rem; }
@@ -132,5 +145,10 @@
     </div>
   </header>
 
+  <footer>
+    © 2026 Francesca Fantini — All rights reserved
+  </footer>
+
 </body>
 </html>
+
