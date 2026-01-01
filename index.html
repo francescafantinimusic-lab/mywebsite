@@ -12,12 +12,10 @@
 
   <style>
     :root {
-      --bg-main: #DA70D6;
       --green-dark: #1B4332;
       --green-soft: #00FF7F;
       --green-accent: #6BCF9A;
       --white: #FFFFFF;
-      --text-main: #000000;
     }
 
     * {
@@ -26,49 +24,39 @@
       padding: 0;
     }
 
-    body {
+    html, body {
+      height: 100%;
       font-family: 'Montserrat', sans-serif;
-      height: 100vh;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
-      margin: 0;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: calc(100vh - 60px); /* leaves space for footer */
-      background-image: url("it-reflects.png"); /* Replace with your image, no spaces */
+      justify-content: space-between; /* footer at bottom */
+      background: url("it-reflects.png") no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
+      color: var(--white);
+    }
+
+    /* ===== OVERLAY ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0,0,0,0.35);
+      z-index: 0;
+    }
+
+    /* ===== HERO CONTENT ===== */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 20px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    /* overlay */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0,0,0,0.35);
-      z-index: 1;
-    }
-
-    /* hero content above overlay */
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
       align-items: center;
       gap: 20px;
     }
@@ -99,6 +87,8 @@
       font-weight: 500;
       transition: all 0.3s ease;
       text-align: center;
+      z-index: 1;
+      position: relative;
     }
 
     .nav-buttons a:hover {
@@ -109,13 +99,12 @@
 
     /* ===== FOOTER ===== */
     footer {
-      height: 60px;
-      background-color: var(--green-dark);
-      color: var(--green-soft);
+      position: relative;
+      z-index: 1;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: rgba(27,67,50,0.8); /* semi-transparent over image */
+      color: var(--green-soft);
+      padding: 15px 20px;
       font-size: 0.9rem;
     }
 
@@ -125,30 +114,27 @@
       .hero-content p { font-size: 1rem; }
       .nav-buttons { width: 160px; }
     }
-
   </style>
 </head>
+
 <body>
+  <div class="hero-content">
+    <h1>Francesca Fantini</h1>
+    <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Francesca Fantini</h1>
-      <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
-
-      <nav class="nav-buttons">
-        <a href="bio.html">Bio</a>
-        <a href="projects.html">Projects</a>
-        <a href="diary.html">Diary</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav-buttons">
+      <a href="bio.html">Bio</a>
+      <a href="projects.html">Projects</a>
+      <a href="diary.html">Diary</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 
   <footer>
     © 2026 Francesca Fantini — All rights reserved
   </footer>
-
 </body>
 </html>
+
 
