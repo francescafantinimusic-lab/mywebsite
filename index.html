@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Francesca Fantini</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Art Portfolio</title>
+  <style>
+    /* ===== General Styles ===== */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== About Section ===== */
+    .about {
+      padding: 40px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+    .about h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .about p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <p>This is my website.</p>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>My Art Portfolio</h1>
+    <p>Exploring creativity through colors and shapes</p>
+  </header>
+
+  <!-- ===== Gallery ===== -->
+  <section class="gallery">
+    <img src="art1.jpg" alt="Artwork 1">
+    <img src="art2.jpg" alt="Artwork 2">
+    <img src="art3.jpg" alt="Artwork 3">
+    <img src="art4.jpg" alt="Artwork 4">
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hello! I am an aspiring artist passionate about creating digital and traditional art. 
+       This portfolio showcases my favorite pieces. Feel free to reach out if you'd like 
+       to collaborate or commission artwork!</p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    &copy; 2026 My Art Portfolio | Follow me on <a href="#">Instagram</a> | <a href="#">Twitter</a>
+  </footer>
+
 </body>
 </html>
