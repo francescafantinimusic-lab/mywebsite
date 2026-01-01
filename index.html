@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francesca Fantini</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Art Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ===== General Styles ===== */
-    body {
-      font-family: 'Montserrat', sans-serif;
+    /* ===== COLOR PALETTE ===== */
+    :root {
+      --bg-main: #F5F7F4;
+      --green-dark: #1B4332;
+      --green-primary: #3A5A40;
+      --green-soft: #A3B18A;
+      --green-accent: #6BCF9A;
+      --text-main: #1B2A23;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #2E7D32;
-      color: #4CAF50;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
     }
 
     a {
@@ -19,93 +39,166 @@
       color: inherit;
     }
 
-    /* ===== Header ===== */
-    header {
-      background-color: #6BCF9A;
-      color: #7CB342;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #7CB342;
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 100vh;
+      background-image: url("me.jpg"); /* 🔁 replace with your photo */
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
 
-    /* ===== Gallery ===== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(27, 67, 50, 0.45);
     }
 
-    /* ===== About Section ===== */
-    .about {
-      padding: 40px 20px;
-      background-color: #6BCF9A;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: var(--white);
+      padding: 20px;
     }
-    .about h2 {
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--green-soft);
+      margin-bottom: 40px;
+    }
+
+    /* ===== NAV BUTTONS ===== */
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-buttons a {
+      padding: 12px 22px;
+      border-radius: 30px;
+      background-color: var(--white);
+      color: var(--green-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background-color: var(--green-accent);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
-      font-size: 2em;
-    }
-    .about p {
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
+      color: var(--green-primary);
+      text-align: center;
     }
 
-    /* ===== Footer ===== */
+    section p {
+      line-height: 1.7;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
-      background-color: #6BCF9A;
-      color: #fff;
+      background-color: var(--green-dark);
+      color: var(--green-soft);
       text-align: center;
       padding: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <h1>My Art Portfolio</h1>
-    <p>Exploring creativity through colors and shapes</p>
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Your Name</h1>
+      <p>Artist · Composer · Creative Explorer</p>
+
+      <nav class="nav-buttons">
+        <a href="#bio">Bio</a>
+        <a href="#projects">Projects</a>
+        <a href="#diary">Diary</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ===== Gallery ===== -->
-  <section class="gallery">
-    <img src="art1.jpg" alt="Artwork 1">
-    <img src="art2.jpg" alt="Artwork 2">
-    <img src="art3.jpg" alt="Artwork 3">
-    <img src="art4.jpg" alt="Artwork 4">
+  <!-- ===== BIO ===== -->
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>
+      Write a short biography here. Talk about your artistic background,
+      inspirations, and creative vision.
+    </p>
   </section>
 
-  <!-- ===== About Section ===== -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>Hello! I am an aspiring artist passionate about creating digital and traditional art. 
-       This portfolio showcases my favorite pieces. Feel free to reach out if you'd like 
-       to collaborate or commission artwork!</p>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>
+      Describe your main projects, exhibitions, performances, or works.
+    </p>
   </section>
 
-  <!-- ===== Footer ===== -->
+  <!-- ===== DIARY ===== -->
+  <section id="diary">
+    <h2>Diary</h2>
+    <p>
+      A space for thoughts, process notes, reflections, or artistic research.
+    </p>
+  </section>
+
+  <!-- ===== MEDIA ===== -->
+  <section id="media">
+    <h2>Media</h2>
+    <p>
+      Videos, audio, interviews, photos, or press material.
+    </p>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: your@email.com<br>
+      Instagram / YouTube / SoundCloud links
+    </p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
-    &copy; 2026 My Art Portfolio | Follow me on <a href="#">Instagram</a> | <a href="#">Twitter</a>
+    © 2026 Your Name — All rights reserved
   </footer>
 
 </body>
