@@ -12,7 +12,7 @@
 
   <style>
     :root {
-      --green-dark: #1B4332;
+      --bg: #DA70D6;
       --green-soft: #00FF7F;
       --white: #FFFFFF;
     }
@@ -29,44 +29,30 @@
     }
 
     body {
-  background-color: #DA70D6;
-  color: #FFFFFF;
-
-    }
-
-    /* overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0,0,0,0.45);
-      z-index: 0;
+      background-color: var(--bg);
+      color: var(--white);
     }
 
     .container {
-      position: relative;
-      z-index: 1;
-      height: 100%;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 40px;
+      padding: 60px 40px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 40px;
+      font-size: 2.4rem;
+      margin-bottom: 50px;
     }
 
     /* ===== PROJECT GRID ===== */
     .projects {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 40px;
+      max-width: 1200px;
       width: 100%;
-      max-width: 1100px;
     }
 
     .project {
@@ -74,47 +60,46 @@
     }
 
     .project h2 {
-      font-size: 1rem;
-      font-weight: 400;
+      font-size: 0.9rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 15px;
       color: var(--green-soft);
     }
 
-    .video-wrapper {
-      position: relative;
+    .video-box {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background-color: #000;
+      background: rgba(0,0,0,0.4);
+      margin-bottom: 15px;
     }
 
-    .video-wrapper iframe {
+    .video-box iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* ===== BACK LINK ===== */
-    .back-link {
-      margin-top: 40px;
-      color: var(--white);
+    .project p {
       font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
+      line-height: 1.5;
+      opacity: 0.9;
     }
 
-    .back-link:hover {
+    .back {
+      margin-top: 50px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+    }
+
+    .back:hover {
       color: var(--green-soft);
     }
 
     /* ===== MOBILE ===== */
     @media (max-width: 900px) {
-      body {
-        overflow: auto;
-      }
-
       .projects {
         grid-template-columns: 1fr;
       }
@@ -127,10 +112,48 @@
     <h1>Projects</h1>
 
     <div class="projects">
+
       <!-- SOLO -->
       <div class="project">
         <h2>Soloo</h2>
-        <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtu
+        <div class="video-box">
+          <!-- YouTube iframe goes here -->
+        </div>
+        <p>
+          Solo saxophone project exploring sound, space,
+          extended techniques and improvisation.
+        </p>
+      </div>
+
+      <!-- AIRKEYCHAINS TRIO -->
+      <div class="project">
+        <h2>Airkeychains Trio</h2>
+        <div class="video-box">
+          <!-- YouTube iframe goes here -->
+        </div>
+        <p>
+          Trio project focused on collective composition,
+          rhythmic structures and live interaction.
+        </p>
+      </div>
+
+      <!-- CHAMBER MUSIC -->
+      <div class="project">
+        <h2>Chamber Music</h2>
+        <div class="video-box">
+          <!-- YouTube iframe goes here -->
+        </div>
+        <p>
+          Chamber music performances with contemporary
+          ensembles and composers.
+        </p>
+      </div>
+
+    </div>
+
+    <a class="back" href="index.html">← Back to home</a>
+  </div>
+</body>
+</html>
+
 
