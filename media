@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media — Francesca Fantini</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #DA70D6;
+  --white: #FFFFFF;
+  --green-soft: #00FF7F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== GLASS BACKGROUND ===== */
+.glass-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.shard {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  transform: rotate(45deg);
+  animation: drift 40s linear infinite;
+}
+
+.shard:nth-child(1) { top: 10%; left: 5%; animation-duration: 60s; }
+.shard:nth-child(2) { top: 40%; left: 70%; animation-duration: 50s; }
+.shard:nth-child(3) { top: 70%; left: 20%; animation-duration: 70s; }
+.shard:nth-child(4) { top: 20%; left: 50%; animation-duration: 65s; }
+
+@keyframes drift {
+  from {
+    transform: rotate(45deg) translateY(0);
+  }
+  to {
+    transform: rotate(45deg) translateY(-300px);
+  }
+}
+
+/* ===== CONTENT ===== */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+}
+
+/* ===== MEDIA ROW ===== */
+.media-row {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+.media-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.video-box {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  background: rgba(0,0,0,0.4);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.text-box {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ===== BACK LINK ===== */
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.back:hover {
+  color: var(--green-soft);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .media-row,
+  .media-row.reverse {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- GLASS BACKGROUND -->
+<div class="glass-bg">
+  <div class="shard"></div>
+  <div class="shard"></div>
+  <div class="shard"></div>
+  <div class="shard"></div>
+</div>
+
+<div class="container">
+  <h1>Media</h1>
+
+  <!-- VIDEO 1 -->
+  <div class="media-row">
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/SY4_szwLj_Q" allowfullscreen></iframe>
+    </div>
+    <div class="text-box">
+      Description of the performance, context,
+      artistic research, venue or collaboration.
+    </div>
+  </div>
+
+  <!-- VIDEO 2 -->
+  <div class="media-row reverse">
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/fo4k89qQ91A" allowfullscreen></iframe>
+    </div>
+    <div class="text-box">
+      Description of the project, ensemble,
+      compositional process or improvisational structure.
+    </div>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div class="media-row">
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/BydcEgRdMH4" allowfullscreen></iframe>
+    </div>
+    <div class="text-box">
+      Description of chamber music context,
+      repertoire, collaborators or festival.
+    </div>
+  </div>
+
+  <a class="back" href="index.html">← Back to home</a>
+</div>
+
+</body>
+</html>
 
