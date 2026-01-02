@@ -28,26 +28,14 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
-body {<!-- CRACKED GLASS BACKGROUND -->
-<div class="glass-layer">
-  <svg class="glass-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-    <path d="M100 100 L300 250 L200 500 L450 600" />
-    <path d="M300 250 L500 200 L650 400" />
-    <path d="M200 500 L350 700 L600 800" />
-    <path d="M500 200 L700 150 L900 300" />
-    <path d="M650 400 L800 600 L900 900" />
-    <path d="M350 700 L200 900" />
-  </svg>
-</div>
-
+body {
   background-color: var(--bg);
   color: var(--white);
   overflow-x: hidden;
 }
 
-/* ===== GLASS BACKGROUND ===== */
-/* ===== REALISTIC CRACKED GLASS ===== */
-/* ===== CRACKED GLASS LAYER ===== */
+/* ================= CRACKED GLASS BACKGROUND ================= */
+
 .glass-layer {
   position: fixed;
   inset: 0;
@@ -59,7 +47,6 @@ body {<!-- CRACKED GLASS BACKGROUND -->
   animation: lightShift 40s ease-in-out infinite alternate;
 }
 
-/* SVG cracks */
 .glass-svg {
   width: 100%;
   height: 100%;
@@ -71,15 +58,13 @@ body {<!-- CRACKED GLASS BACKGROUND -->
   stroke-width: 0.6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  animation: pulse 12s ease-in-out infinite;
+  animation: pulse 14s ease-in-out infinite;
 }
 
-/* stagger pulse */
 .glass-svg path:nth-child(odd) {
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 
-/* ===== LIGHT ANIMATIONS ===== */
 @keyframes pulse {
   0%   { opacity: 0.25; }
   50%  { opacity: 0.55; }
@@ -91,12 +76,12 @@ body {<!-- CRACKED GLASS BACKGROUND -->
     background-position: 20% 20%, 70% 60%;
   }
   to {
-    background-position: 30% 30%, 60% 50%;
+    background-position: 35% 30%, 60% 50%;
   }
 }
 
+/* ================= CONTENT ================= */
 
-/* ===== CONTENT ===== */
 .container {
   position: relative;
   z-index: 1;
@@ -109,9 +94,12 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 80px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
-/* ===== MEDIA ROW ===== */
+/* ================= MEDIA ROW ================= */
+
 .media-row {
   display: flex;
   align-items: center;
@@ -142,21 +130,24 @@ h1 {
   opacity: 0.95;
 }
 
-/* ===== BACK LINK ===== */
+/* ================= BACK LINK ================= */
+
 .back {
   display: block;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
   color: var(--white);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
 }
 
 .back:hover {
   color: var(--green-soft);
 }
 
-/* ===== MOBILE ===== */
+/* ================= MOBILE ================= */
+
 @media (max-width: 900px) {
   .media-row,
   .media-row.reverse {
@@ -168,18 +159,21 @@ h1 {
 
 <body>
 
-<!-- GLASS BACKGROUND -->
-<div class="glass-bg">
-  <div class="crack"></div>
-  <div class="crack"></div>
-  <div class="crack"></div>
-  <div class="crack"></div>
-
-  <div class="micro"></div>
-  <div class="micro"></div>
-  <div class="micro"></div>
+<!-- ===== CRACKED GLASS BACKGROUND ===== -->
+<div class="glass-layer">
+  <svg class="glass-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+    <path d="M100 100 L300 250 L200 500 L450 600" />
+    <path d="M300 250 L500 200 L650 400" />
+    <path d="M200 500 L350 700 L600 800" />
+    <path d="M500 200 L700 150 L900 300" />
+    <path d="M650 400 L800 600 L900 900" />
+    <path d="M350 700 L200 900" />
+  </svg>
 </div>
 
+<!-- ===== CONTENT ===== -->
+<div class="container">
+  <h1>Media</h1>
 
   <!-- VIDEO 1 -->
   <div class="media-row">
@@ -187,19 +181,19 @@ h1 {
       <iframe src="https://www.youtube.com/embed/SY4_szwLj_Q" allowfullscreen></iframe>
     </div>
     <div class="text-box">
-      Description of the performance, context,
-      artistic research, venue or collaboration.
+      Solo performance — extended techniques, improvisation,
+      and spatial exploration of sound.
     </div>
   </div>
 
   <!-- VIDEO 2 -->
   <div class="media-row reverse">
     <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/SY4_szwLj_Q" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/fo4k89qQ91A" allowfullscreen></iframe>
     </div>
     <div class="text-box">
-      Description of the project, ensemble,
-      compositional process or improvisational structure.
+      Airkeychains Trio — collective composition,
+      interaction, and contemporary chamber improvisation.
     </div>
   </div>
 
@@ -209,14 +203,25 @@ h1 {
       <iframe src="https://www.youtube.com/embed/BydcEgRdMH4" allowfullscreen></iframe>
     </div>
     <div class="text-box">
-      Description of chamber music context,
-      repertoire, collaborators or festival.
+      Chamber music project — dialogue between written material
+      and open-form structures.
     </div>
   </div>
 
   <a class="back" href="index.html">← Back to home</a>
 </div>
 
+<!-- ===== MOUSE REFRACTION ===== -->
+<script>
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+
+  document.querySelector(".glass-layer").style.background =
+    `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.18), transparent 40%),
+     radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 45%)`;
+});
+</script>
+
 </body>
 </html>
-
