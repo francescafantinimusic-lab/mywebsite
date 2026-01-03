@@ -12,11 +12,7 @@
 
   <style>
     :root {
-      --bg-main: #DA70D6;
-      --green-dark: #1B4332;
       --green-soft: #00FF7F;
-      --green-accent: #6BCF9A;
-      --text-main: #000000;
       --white: #FFFFFF;
     }
 
@@ -29,7 +25,8 @@
     body {
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
-      overflow: hidden; /* 🚫 no scrolling */
+      overflow: hidden;
+      background: #000;
     }
 
     a {
@@ -39,27 +36,33 @@
     /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      background-image: url("it reflects.png");
-      background-size: cover;
-      background-position: center;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
     }
 
+    /* ===== CENTER IMAGE ===== */
+    .hero-image {
+      position: absolute;
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+      z-index: 0;
+    }
+
+    /* ===== CONTENT ===== */
     .hero-content {
       position: relative;
       z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       color: var(--white);
       padding: 20px;
@@ -77,37 +80,38 @@
       margin-bottom: 40px;
     }
 
-    /* ===== BUTTON MENU ===== */
+    /* ===== NAV ===== */
     .nav-buttons {
       display: flex;
       flex-direction: column;
       gap: 14px;
       width: 220px;
+      margin: 0 auto;
     }
 
-.nav-buttons a {
-  background: none;              /* ❌ no box */
-  padding: 0;                    /* ❌ no padding */
-  border-radius: 0;              /* ❌ no rounded corners */
-  color: var(--white);           /* white text */
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+    .nav-buttons a {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-.nav-buttons a:hover {
-  color: var(--green-soft);      /* subtle hover color */
-  transform: translateY(-2px);
-}
-
+    .nav-buttons a:hover {
+      color: var(--green-soft);
+      transform: translateY(-2px);
     }
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       body {
         overflow: auto;
+      }
+
+      .hero-image {
+        max-width: 90%;
+        max-height: 60%;
       }
     }
   </style>
@@ -116,6 +120,8 @@
 <body>
 
   <header class="hero">
+    <img src="fantinicreditsmontalbano" alt="Artwork" class="hero-image">
+
     <div class="hero-content">
       <h1>Francesca Fantini</h1>
       <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
@@ -132,6 +138,3 @@
 
 </body>
 </html>
-
-
-
