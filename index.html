@@ -8,12 +8,11 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-main: #E3A1C9;
-      --green-soft: #00FF7F;
+      --bg-main: #A35A86;
       --white: #FFFFFF;
     }
 
@@ -32,64 +31,45 @@
 
     a {
       text-decoration: none;
+      color: var(--white);
     }
 
     /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      position: relative;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      padding: 0 6%;
-      gap: 4%;
     }
 
-    /* ===== IMAGES ===== */
+    /* ===== MAIN IMAGE ===== */
     .hero-image {
-      width: 100%;
-      max-height: 75vh;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
     }
 
-    /* ===== CONTENT ===== */
-    .hero-content {
-      color: var(--white);
+    /* ===== MENU OVER IMAGE ===== */
+    .nav-buttons {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
       text-align: center;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      font-weight: 600; /* BOLD */
-      color: var(--green-soft);
-      margin-bottom: 40px;
-      letter-spacing: 0.04em;
-    }
-
-    /* ===== NAV ===== */
-    .nav-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: center;
-    }
-
     .nav-buttons a {
-      color: var(--white);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      transition: color 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .nav-buttons a:hover {
-      color: var(--green-soft);
+      opacity: 0.6;
       transform: translateY(-2px);
     }
 
@@ -99,14 +79,13 @@
         overflow: auto;
       }
 
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
+      .hero-image {
+        max-width: 95%;
+        max-height: 70%;
       }
 
-      .hero-image {
-        max-width: 80%;
-        margin: 0 auto 30px;
+      .nav-buttons a {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -115,25 +94,17 @@
 <body>
 
   <header class="hero">
-    <!-- Left image -->
-    <img src="fantinicreditsmontalbano" alt="Artwork 1" class="hero-image">
+    <!-- Main image -->
+    <img src="fantinicreditsmontalbano" alt="Fantini Credits Montalbano" class="hero-image">
 
-    <!-- Center content -->
-    <div class="hero-content">
-      <h1>Francesca Fantini</h1>
-      <p><strong>Saxophonist · Contemporary · Improvisation · Artistic Researcher</strong></p>
-
-      <nav class="nav-buttons">
-        <a href="bio.html">Bio</a>
-        <a href="projects.html">Projects</a>
-        <a href="diary.html">Diary</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-
-    <!-- Right image -->
-    <img src="fantini2creditsmontalbano.png" alt="Artwork 2" class="hero-image">
+    <!-- Overlay menu -->
+    <nav class="nav-buttons">
+      <a href="bio.html">Bio</a>
+      <a href="projects.html">Projects</a>
+      <a href="diary.html">Diary</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
 </body>
