@@ -37,22 +37,22 @@
     /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 8%;
+      padding: 0 6%;
+      gap: 4%;
     }
 
-    /* ===== IMAGE ===== */
+    /* ===== IMAGES ===== */
     .hero-image {
-      max-width: 45%;
+      width: 100%;
       max-height: 75vh;
       object-fit: contain;
     }
 
     /* ===== CONTENT ===== */
     .hero-content {
-      width: 40%;
       color: var(--white);
       text-align: right;
     }
@@ -98,18 +98,16 @@
       }
 
       .hero {
-        flex-direction: column;
-        justify-content: center;
+        grid-template-columns: 1fr;
         text-align: center;
       }
 
       .hero-image {
         max-width: 80%;
-        margin-bottom: 30px;
+        margin: 0 auto 30px;
       }
 
       .hero-content {
-        width: 100%;
         text-align: center;
       }
 
@@ -127,8 +125,13 @@
 <body>
 
   <header class="hero">
-    <img src="fantinicreditsmontalbano" alt="Artwork" class="hero-image">
+    <!-- Image 1 -->
+    <img src="fantinicreditsmontalbano" alt="Artwork 1" class="hero-image">
 
+    <!-- Image 2 -->
+    <img src="fantini2creditsmontalbano" alt="Artwork 2" class="hero-image">
+
+    <!-- Text + Menu -->
     <div class="hero-content">
       <h1>Francesca Fantini</h1>
       <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
