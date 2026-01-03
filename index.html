@@ -12,7 +12,7 @@
 
   <style>
     :root {
-      --bg-main: #D658A5;
+      --bg-main: #E3A1C9;
       --green-soft: #00FF7F;
       --white: #FFFFFF;
     }
@@ -54,19 +54,21 @@
     /* ===== CONTENT ===== */
     .hero-content {
       color: var(--white);
-      text-align: right;
+      text-align: center;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero p {
       font-size: 1.05rem;
+      font-weight: 600; /* BOLD */
       color: var(--green-soft);
       margin-bottom: 40px;
+      letter-spacing: 0.04em;
     }
 
     /* ===== NAV ===== */
@@ -74,7 +76,7 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .nav-buttons a {
@@ -88,7 +90,7 @@
 
     .nav-buttons a:hover {
       color: var(--green-soft);
-      transform: translateX(-4px);
+      transform: translateY(-2px);
     }
 
     /* ===== MOBILE ===== */
@@ -106,18 +108,6 @@
         max-width: 80%;
         margin: 0 auto 30px;
       }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .nav-buttons {
-        align-items: center;
-      }
-
-      .nav-buttons a:hover {
-        transform: translateY(-2px);
-      }
     }
   </style>
 </head>
@@ -125,16 +115,13 @@
 <body>
 
   <header class="hero">
-    <!-- Image 1 -->
+    <!-- Left image -->
     <img src="fantinicreditsmontalbano" alt="Artwork 1" class="hero-image">
 
-    <!-- Image 2 -->
-    <img src="fantini2creditsmontalbano.png" alt="Artwork 2" class="hero-image">
-
-    <!-- Text + Menu -->
+    <!-- Center content -->
     <div class="hero-content">
       <h1>Francesca Fantini</h1>
-      <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
+      <p><strong>Saxophonist · Contemporary · Improvisation · Artistic Researcher</strong></p>
 
       <nav class="nav-buttons">
         <a href="bio.html">Bio</a>
@@ -144,6 +131,9 @@
         <a href="contact.html">Contact</a>
       </nav>
     </div>
+
+    <!-- Right image -->
+    <img src="fantini2creditsmontalbano.png" alt="Artwork 2" class="hero-image">
   </header>
 
 </body>
