@@ -12,6 +12,7 @@
 
   <style>
     :root {
+      --bg-main: #D658A5;
       --green-soft: #00FF7F;
       --white: #FFFFFF;
     }
@@ -25,8 +26,8 @@
     body {
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
+      background: var(--bg-main);
       overflow: hidden;
-      background: #000;
     }
 
     a {
@@ -36,36 +37,24 @@
     /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      position: relative;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 8%;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: 1;
-    }
-
-    /* ===== CENTER IMAGE ===== */
+    /* ===== IMAGE ===== */
     .hero-image {
-      position: absolute;
-      max-width: 70%;
-      max-height: 70%;
+      max-width: 45%;
+      max-height: 75vh;
       object-fit: contain;
-      z-index: 0;
     }
 
     /* ===== CONTENT ===== */
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
+      width: 40%;
       color: var(--white);
-      padding: 20px;
+      text-align: right;
     }
 
     .hero h1 {
@@ -75,7 +64,7 @@
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--green-soft);
       margin-bottom: 40px;
     }
@@ -85,8 +74,7 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-      width: 220px;
-      margin: 0 auto;
+      align-items: flex-end;
     }
 
     .nav-buttons a {
@@ -100,7 +88,7 @@
 
     .nav-buttons a:hover {
       color: var(--green-soft);
-      transform: translateY(-2px);
+      transform: translateX(-4px);
     }
 
     /* ===== MOBILE ===== */
@@ -109,9 +97,28 @@
         overflow: auto;
       }
 
+      .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
       .hero-image {
-        max-width: 90%;
-        max-height: 60%;
+        max-width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .hero-content {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-buttons {
+        align-items: center;
+      }
+
+      .nav-buttons a:hover {
+        transform: translateY(-2px);
       }
     }
   </style>
