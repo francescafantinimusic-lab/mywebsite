@@ -48,16 +48,40 @@
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
+      z-index: 1;
+    }
+
+    /* ===== TEXT OVER IMAGE ===== */
+    .hero-text {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      pointer-events: none; /* keeps menu clickable */
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     /* ===== MENU OVER IMAGE ===== */
     .nav-buttons {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       gap: 18px;
       text-align: center;
+      bottom: 10%;
     }
 
     .nav-buttons a {
@@ -84,8 +108,16 @@
         max-height: 70%;
       }
 
-      .nav-buttons a {
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-text p {
         font-size: 0.9rem;
+      }
+
+      .nav-buttons {
+        bottom: 6%;
       }
     }
   </style>
@@ -95,9 +127,15 @@
 
   <header class="hero">
     <!-- Main image -->
-    <img src="fantinicreditsmontalbano" alt="Fantini Credits Montalbano" class="hero-image">
+    <img src="fantinicreditsmontalbano.png" alt="Fantini Credits Montalbano" class="hero-image">
 
-    <!-- Overlay menu -->
+    <!-- Name & subtitle -->
+    <div class="hero-text">
+      <h1>Francesca Fantini</h1>
+      <p>Saxophonist · Contemporary · Improvisation · Artistic Researcher</p>
+    </div>
+
+    <!-- Menu -->
     <nav class="nav-buttons">
       <a href="bio.html">Bio</a>
       <a href="projects.html">Projects</a>
