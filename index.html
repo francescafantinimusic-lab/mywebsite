@@ -1,162 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francesca Fantini</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Francesca Fantini</title>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-main: #A35A86;
-      --white: #FFFFFF;
-      --green-accent: #3FAF8F;
-    }
+<style>
+:root {
+  --white: #FFFFFF;
+  --green-accent: #3FAF8F;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      height: 100vh;
-      background: var(--bg-main);
-      overflow: hidden;
-    }
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: var(--white);
-    }
+body {
+  overflow: hidden;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* ===== BACKGROUND IMAGE ===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url("fantinicreditsmontalbano.jpg"); /* 🔁 CHECK EXTENSION */
+  background-size: contain; /* keeps proportions */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* fallback */
+  position: relative;
+}
 
-    /* ===== MAIN IMAGE ===== */
-    .hero-image {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      z-index: 1;
-    }
+/* ===== DARK OVERLAY (optional, helps text) ===== */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
 
-    /* ===== TEXT OVER IMAGE ===== */
-    .hero-text {
-      position: absolute;
-      z-index: 2;
-      text-align: center;
-      pointer-events: none;
-    }
+/* ===== MENU ===== */
+.nav {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
 
-    .hero-text h1 {
-      font-size: 3.2rem;
-      font-weight: 600;
-      margin-bottom: 6px;
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
 
-      /* white text with thin black border */
-      color: var(--white);
-      text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-    }
+.nav a:hover {
+  opacity: 0.6;
+}
 
-    .hero-text p {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--green-accent);
-    }
+/* ===== CENTER TEXT ===== */
+.center-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
 
-    /* ===== MENU OVER IMAGE ===== */
-    .nav-buttons {
-      position: absolute;
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      text-align: center;
+.center-content h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 20px;
 
-      /* moved closer to subtitle */
-      bottom: 18%;
-    }
+  /* thin black border */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
 
-    .nav-buttons a {
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+.center-content p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+}
 
-    .nav-buttons a:hover {
-      opacity: 0.6;
-      transform: translateY(-2px);
-    }
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav {
+    gap: 20px;
+    top: 20px;
+  }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      body {
-        overflow: auto;
-      }
+  .center-content h1 {
+    font-size: 2.4rem;
+  }
 
-      .hero-image {
-        max-width: 95%;
-        max-height: 70%;
-      }
-
-      .hero-text h1 {
-        font-size: 2.4rem;
-      }
-
-      .hero-text p {
-        font-size: 0.85rem;
-      }
-
-      .nav-buttons {
-        bottom: 12%;
-      }
-    }
-  </style>
+  .center-content p {
+    font-size: 1.1rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <!-- Main image -->
-    <img src="fantinicreditsmontalbano" alt="Fantini Credits Montalbano" class="hero-image">
+<header class="hero">
 
-    <!-- Name & subtitle -->
-    <div class="hero-text">
-      <h1>Francesca Fantini</h1>
-      <p>Saxophonist · Artistic Researcher</p>
-    </div>
+  <!-- MENU -->
+  <nav class="nav">
+    <a href="bio.html">Bio</a>
+    <a href="projects.html">Projects</a>
+    <a href="diary.html">Diary</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <!-- Menu -->
-    <nav class="nav-buttons">
-      <a href="bio.html">Bio</a>
-      <a href="projects.html">Projects</a>
-      <a href="diary.html">Diary</a>
-      <a href="media.html">Media</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- CENTER TEXT -->
+  <div class="center-content">
+    <h1>Francesca Fantini</h1>
+    <p>Saxophonist · Artistic Researcher</p>
+  </div>
+
+</header>
 
 </body>
 </html>
+
 
 
