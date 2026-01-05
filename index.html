@@ -31,37 +31,16 @@
     body {
       background-color: var(--bg-main);
       color: var(--white);
-      overflow: hidden;
-    }
-
-    /* ===== BACKGROUND IMAGE ===== */
-    .hero {
-      width: 100%;
-      height: 100%;
-      background-image: url("fantinicreditsmontalbano"); 
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-    }
-
-    /* optional dark overlay */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
     }
 
     /* ===== TOP NAV ===== */
     .nav {
-      position: absolute;
-      top: 30px;
-      width: 100%;
+      padding: 25px 20px;
       display: flex;
       justify-content: center;
       gap: 35px;
-      z-index: 3;
     }
 
     .nav a {
@@ -77,25 +56,39 @@
       opacity: 0.6;
     }
 
-    /* ===== CENTER CONTENT ===== */
-    .center {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
+      justify-content: center;
+      padding: 40px;
+      gap: 60px;
     }
 
-    .center h1 {
-      font-size: 3.5rem;
+    /* IMAGE */
+    .image-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+
+    /* TEXT */
+    .text-wrapper {
+      flex: 1;
+      text-align: center;
+    }
+
+    .text-wrapper h1 {
+      font-size: 3.4rem;
       font-weight: 600;
-      margin-bottom: 15px;
-      /* subtle black border */
+      margin-bottom: 20px;
       text-shadow:
         -1px -1px 0 #000,
          1px -1px 0 #000,
@@ -103,40 +96,79 @@
          1px  1px 0 #000;
     }
 
-    .center p {
-      font-size: 1.4rem;
+    .text-wrapper p {
+      font-size: 1.6rem;
       letter-spacing: 0.08em;
-      color: var(--green-accent);
       text-transform: uppercase;
+      color: var(--green-accent);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
     }
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .nav a { font-size: 0.8rem; }
-      .center h1 { font-size: 2.4rem; }
-      .center p { font-size: 1rem; }
+      .nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .main {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+      }
+
+      .image-wrapper img {
+        max-height: 45vh;
+      }
+
+      .text-wrapper h1 {
+        font-size: 2.3rem;
+      }
+
+      .text-wrapper p {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <!-- TOP MENU -->
-    <nav class="nav">
-      <a href="bio.html">Bio</a>
-      <a href="projects.html">Projects</a>
-      <a href="diary.html">Diary</a>
-      <a href="media.html">Media</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="bio.html">Bio</a>
+    <a href="projects.html">Projects</a>
+    <a href="diary.html">Diary</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <!-- CENTERED TEXT -->
-    <div class="center">
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="image-wrapper">
+      <!-- IMPORTANT: include file extension -->
+      <img src="fantinicreditsmontalbano.jpg" alt="Francesca Fantini">
+    </div>
+
+    <div class="text-wrapper">
       <h1>Francesca Fantini</h1>
       <p>Saxophonist · Artistic Researcher</p>
     </div>
-  </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    Francesca Fantini — All rights reserved © 2026
+  </footer>
 
 </body>
 </html>
+
