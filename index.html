@@ -28,12 +28,25 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    body {
-      background-color: var(--bg-main);
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-    }
+   body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-image: url(hilma af klint.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
 
     /* ===== TOP NAV ===== */
     .nav {
