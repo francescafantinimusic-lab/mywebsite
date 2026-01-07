@@ -1,227 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media — Francesca Fantini</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Francesca Fantini</title>
 
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #DA70D6;
+  <style>
+   :root {
   --white: #FFFFFF;
-  --green-soft: #00FF7F;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
+  --black: #000000;
 }
 
 body {
-  background-color: var(--bg);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
   color: var(--white);
-  overflow-x: hidden;
+  position: relative;
 }
 
-/* ================= CRACKED GLASS BACKGROUND ================= */
-
-.glass-layer {
+/* Background image */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 45%);
-  animation: lightShift 40s ease-in-out infinite alternate;
+  background: url("hilma af klint.jpg") center / cover no-repeat;
+  z-index: -2;
 }
 
-.glass-svg {
-  width: 100%;
-  height: 100%;
+/* Grey overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
 }
 
-.glass-svg path {
-  fill: none;
-  stroke: rgba(255,255,255,0.45);
-  stroke-width: 0.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  animation: pulse 14s ease-in-out infinite;
-}
-
-.glass-svg path:nth-child(odd) {
-  animation-delay: 4s;
-}
-
-@keyframes pulse {
-  0%   { opacity: 0.25; }
-  50%  { opacity: 0.55; }
-  100% { opacity: 0.3; }
-}
-
-@keyframes lightShift {
-  from {
-    background-position: 20% 20%, 70% 60%;
-  }
-  to {
-    background-position: 35% 30%, 60% 50%;
-  }
-}
-
-/* ================= CONTENT ================= */
-
-.container {
+/* Ensure content is above background */
+body > * {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
-  margin: auto;
-  padding: 80px 40px;
 }
 
-h1 {
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 40px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+    }
+
+    /* ===== PROJECT GRID ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .project {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 80px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
 }
 
-/* ================= MEDIA ROW ================= */
 
-.media-row {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 100px;
-}
+    .project h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      color: var(--white);
+    }
 
-.media-row.reverse {
-  flex-direction: row-reverse;
-}
+    /* ===== VIDEO THUMBNAIL ===== */
+    .video-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      cursor: pointer;
+      overflow: hidden;
+      background: #000;
+      margin-bottom: 15px;
+    }
 
-.video-box {
-  flex: 1;
-  aspect-ratio: 16 / 9;
-  background: rgba(0,0,0,0.4);
-}
+    .video-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.video-box iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+    .play-button {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.3s ease;
+    }
 
-.text-box {
-  flex: 1;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  opacity: 0.95;
-}
+    .video-box:hover .play-button {
+      background: rgba(0,0,0,0.45);
+    }
 
-/* ================= BACK LINK ================= */
+    .video-box iframe {
+      display: none;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
-.back {
-  display: block;
-  text-align: center;
-  margin-top: 60px;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem;
-}
+    .project p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
 
-.back:hover {
-  color: var(--green-soft);
-}
+    .back {
+      margin-top: 50px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+    }
 
-/* ================= MOBILE ================= */
+    .back:hover {
+      color: var(--black);
+    }
 
-@media (max-width: 900px) {
-  .media-row,
-  .media-row.reverse {
-    flex-direction: column;
-  }
-}
-</style>
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===== CRACKED GLASS BACKGROUND ===== -->
-<div class="glass-layer">
-  <svg class="glass-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-    <path d="M100 100 L300 250 L200 500 L450 600" />
-    <path d="M300 250 L500 200 L650 400" />
-    <path d="M200 500 L350 700 L600 800" />
-    <path d="M500 200 L700 150 L900 300" />
-    <path d="M650 400 L800 600 L900 900" />
-    <path d="M350 700 L200 900" />
-  </svg>
-</div>
+  <div class="container">
+    <h1>Projects</h1>
 
-<!-- ===== CONTENT ===== -->
-<div class="container">
-  <h1>Media</h1>
+    <div class="projects">
 
-  <!-- VIDEO 1 -->
-  <div class="media-row">
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/SY4_szwLj_Q" allowfullscreen></iframe>
+      <!-- WHEN GLASS BREAKS -->
+      <div class="project">
+        <h2>when glass breaks</h2>
+        <div class="video-box" onclick="loadVideo(this)">
+          <img src="solo-thumbnail.jpg" alt="Solo project">
+          <div class="play-button">▶</div>
+          <iframe
+            data-src="https://youtube.com/playlist?list=PLtaN1ikwpaweLetuMAzAghsXPGtl2c_nf&si=RJtXdCoF-bMnwpMz"
+            allow="encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p>
+          Solo free improvisation for alto saxophone: when glass breaks - it reflects - in fragments.
+        </p>
+      </div>
+
+      <!-- SIDRABINI n. 1 -->
+      <div class="project">
+        <h2>airkeychains trio</h2>
+        <div class="video-box" onclick="loadVideo(this)">
+          <img src="airkeychains-thumbnail.jpg" alt="airkeychains trio">
+          <div class="play-button">▶</div>
+          <iframe
+            data-src="https://youtu.be/7Tk8WxJ5dJk?si=DtXyrB_floJcC9NZ"
+            allow="encrypted-media"
+    allowfullscreen>
+          </iframe>
+        </div>
+        <p>
+          Trio project focused on free improvisation,
+          rooted in contemporary chamber music practice.
+        </p>
+      </div>
+
+      <!-- CHAMBER MUSIC -->
+      <div class="project">
+        <h2>Chamber Music</h2>
+        <div class="video-box" onclick="loadVideo(this)">
+          <img src="chamber-thumbnail.jpg" alt="Chamber music">
+          <div class="play-button">▶</div>
+          <iframe
+            data-src="https://www.youtube.com/embed/BydcEgRdMH4?autoplay=1"
+            allow="encrypted-media"
+    allowfullscreen>
+          </iframe>
+        </div>
+        <p>
+          Chamber music performances with contemporary
+          ensembles and composers.
+        </p>
+      </div>
+
     </div>
-    <div class="text-box">
-      Solo performance — extended techniques, improvisation,
-      and spatial exploration of sound.
-    </div>
+
+    <a class="back" href="index.html">← Back to home</a>
   </div>
 
-  <!-- VIDEO 2 -->
-  <div class="media-row reverse">
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/fo4k89qQ91A" allowfullscreen></iframe>
-    </div>
-    <div class="text-box">
-      Airkeychains Trio — collective composition,
-      interaction, and contemporary chamber improvisation.
-    </div>
-  </div>
+  <!-- SCRIPT -->
+  <script>
+    function playVideo(container) {
+      const iframe = container.querySelector("iframe");
+      const img = container.querySelector("img");
+      const playBtn = container.querySelector(".play-button");
 
-  <!-- VIDEO 3 -->
-  <div class="media-row">
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/BydcEgRdMH4" allowfullscreen></iframe>
-    </div>
-    <div class="text-box">
-      Chamber music project — dialogue between written material
-      and open-form structures.
-    </div>
-  </div>
-
-  <a class="back" href="index.html">← Back to home</a>
-</div>
-
-<!-- ===== MOUSE REFRACTION ===== -->
-<script>
-document.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth) * 100;
-  const y = (e.clientY / window.innerHeight) * 100;
-
-  document.querySelector(".glass-layer").style.background =
-    `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.18), transparent 40%),
-     radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 45%)`;
-});
-</script>
+      img.style.display = "none";
+      playBtn.style.display = "none";
+      iframe.style.display = "block";
+    }
+  </script>
 
 </body>
-</html>
+</htm
