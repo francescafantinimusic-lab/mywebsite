@@ -104,20 +104,26 @@ body {
       margin-bottom: 30px;
     }
 
-    /* TEXT */
-    .text-wrapper h1 {
-      font-size: 3.4rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+   /* TEXT */
+.text-wrapper {
+  position: relative;
+  z-index: 3;              /* 👈 bring text to front */
+}
 
-    .text-wrapper p {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green-accent);
-    }
+.text-wrapper h1 {
+  font-size: 3.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.text-wrapper p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2F6F5E;          /* saxophonist-artistic researcher */
+}
+
 
     /* ===== FOOTER ===== */
     footer {
