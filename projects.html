@@ -12,26 +12,42 @@
 
   <style>
     :root {
-      --bg: #F2C94C;
-      --black: #000000;
-      --white: #FFFFFF;
-    }
+  --white: #FFFFFF;
+  --black: #000000;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--white);
+  position: relative;
+}
 
-    html, body {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-    }
+/* Background image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("hilma af klint.jpg") center / cover no-repeat;
+  z-index: -2;
+}
 
-    body {
-      background-color: var(--bg);
-      color: var(--white);
-    }
+/* Grey overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* Ensure content is above background */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
 
     .container {
       min-height: 100vh;
@@ -56,7 +72,13 @@
     }
 
     .project {
-      text-align: center;
+  text-align: center;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
+
     }
 
     .project h2 {
@@ -64,7 +86,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 15px;
-      color: var(--black);
+      color: var(--white);
     }
 
     .video-box {
