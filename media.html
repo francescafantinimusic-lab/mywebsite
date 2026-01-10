@@ -1,230 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Media — Francesca Fantini</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Media — Francesca Fantini</title>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --white: #FFFFFF;
-      --black: #000000;
-    }
+<style>
+:root {
+  --white: #ffffff;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-    }
+html, body {
+  font-family: 'Montserrat', sans-serif;
+}
 
-    body {
-      min-height: 100vh;
-      color: var(--white);
-      position: relative;
-    }
+body {
+  min-height: 100vh;
+  color: var(--white);
+  position: relative;
+}
 
-    /* Background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("hilma af klint.jpg") center / cover no-repeat;
-      z-index: -2;
-    }
+/* BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("hilma af klint.jpg") center / cover no-repeat;
+  z-index: -2;
+}
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-    }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: -1;
+}
 
-    body > * {
-      position: relative;
-      z-index: 1;
-    }
+.container {
+  padding: 60px 40px;
+  max-width: 1300px;
+  margin: auto;
+}
 
-    .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 40px;
-    }
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+}
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 50px;
-    }
+/* GRID STRUCTURE */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
 
-    /* GRID */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      width: 100%;
-    }
+/* MONHEIM ROW */
+.monheim {
+  grid-column: 1 / -1;
+}
 
-    .project {
-      text-align: center;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      border-radius: 14px;
-    }
+/* LAST ROW (2 ITEMS CENTERED) */
+.last-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
 
-    .project.large {
-      grid-column: span 2;
-    }
+/* PROJECT CARD */
+.project {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+}
 
-    .project h2 {
-      font-size: 1.1rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
+.project h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
 
-    /* VIDEO BOX */
-    .video-box {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      cursor: pointer;
-      overflow: hidden;
-      margin-bottom: 15px;
-      background: black;
-    }
+/* VIDEO */
+.video-box {
+  position: relative;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  background: black;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
 
-    .video-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.video-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .play-button {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      background: rgba(0,0,0,0.35);
-    }
+.play-button {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background: rgba(0,0,0,0.35);
+}
 
-    .video-box iframe {
-      display: none;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+.video-box iframe {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-    .project p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      opacity: 0.9;
-    }
+.project p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-    }
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-    .back {
-      margin-top: 60px;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      font-size: 0.85rem;
-      color: var(--white);
-    }
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--white);
+}
 
-    .back:hover {
-      opacity: 0.6;
-    }
-  </style>
+/* MOBILE */
+@media (max-width: 900px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .last-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
-  <h1>Media</h1>
+<h1>Media</h1>
 
-  <div class="projects">
+<div class="media-grid">
 
-    <!-- FERNANDE BREILH -->
-    <div class="project">
-      <h2>F. Breihl-Decruck, Sonate en UT</h2>
-      <div class="video-box" onclick="playVideo(this)">
-        <img src="solo-thumbnail.jpg">
-        <div class="play-button">▶</div>
-        <iframe
-          data-src="https://www.youtube.com/watch?v=PaSOa1Bv0z0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p>I Movement from the Sonata for Alto Saxophone and Piano by Fernande Breilh Decruck. Pianist: Yi-Ling Wu</p>
-    </div>
+<!-- ROW 1 -->
+<div class="project">
+<h2>Breihl-Decruck</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="solo-thumbnail.jpg">
+<div class="play-button">▶</div>
+<iframe data-src="https://www.youtube.com/embed/PaSOa1Bv0z0?autoplay=1" allow="autoplay" allowfullscreen></iframe>
+</div>
+<p>Sonata en Ut — Yi-Ling Wu, piano</p>
+</div>
 
-    <!-- RHYTHMES LYRIQUES -->
-    <div class="project">
-      <h2>Rhythmes Lyriques</h2>
-      <div class="video-box" onclick="playVideo(this)">
-        <img src="rhythmes-thumbnail.jpeg">
-        <div class="play-button">▶</div>
-        <iframe
-          data-src="https://www.youtube.com/embed/u6JSjIrAPS4?autoplay=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p>Contemporary chamber music performance.</p>
-    </div>
+<div class="project">
+<h2>Rhythmes Lyriques</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="rhythmes-thumbnail.jpeg">
+<div class="play-button">▶</div>
+<iframe data-src="https://www.youtube.com/embed/u6JSjIrAPS4?autoplay=1" allow="autoplay" allowfullscreen></iframe>
+</div>
+<p>Contemporary chamber music</p>
+</div>
 
-    <!-- MONHEIM TRIENNALE II for Selendis S.A. Johnson: Reflections on the German Revolution (1918-1919, and more) -->
-    <div class="project large">
-      <h2>Monheim Triennale II</h2>
+<div class="project">
+<h2>Two Reeds</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="tworeeds-thumbnail.jpg">
+<div class="play-button">▶</div>
+<iframe data-src="https://www.youtube.com/embed/7Tk8WxJ5dJk?autoplay=1" allow="autoplay" allowfullscreen></iframe>
+</div>
+<p>European Music Collective</p>
+</div>
 
-      <div class="video-box" onclick="playVideo(this)">
-        <img src="monheim-thumbnail.jpg">
-        <div class="play-button">▶</div>
-        <iframe
-          data-src="https://vimeo.com/1132217310/d355991fc4?share=copy&fl=sv&fe=ci"
-          allow="autoplay; fullscreen"
-          allowfullscreen>
-        </iframe>
-      </div>
+<!-- MONHEIM -->
+<div class="project monheim">
+<h2>Monheim Triennale II</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="monheim-thumbnail.jpg">
+<div class="play-button">▶</div>
+<iframe data-src="https://player.vimeo.com/video/1132217310?h=d355991fc4&autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
 
-      <div class="gallery">
-        <img src="monheim1.jpg">
-        <img src="monheim2.jpg">
-        <img src="monheim3.jpg">
-      </div>
-    </div>
+<div class="gallery">
+<img src="monheim1.jpg">
+<img src="monheim2.jpg">
+<img src="monheim3.jpg">
+</div>
+</div>
 
-  </div>
+<!-- LAST ROW -->
+<div class="last-row">
+<div class="project">
+<h2>Solo Improvisation</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="solo2-thumbnail.jpg">
+<div class="play-button">▶</div>
+<iframe data-src="https://www.youtube.com/embed/SY4_szwLj_Q?autoplay=1" allow="autoplay" allowfullscreen></iframe>
+</div>
+</div>
 
-  <a class="back" href="index.html">← Back to home</a>
+<div class="project">
+<h2>Airkeychains</h2>
+<div class="video-box" onclick="playVideo(this)">
+<img src="airkeychains-thumbnail.jpg">
+<div class="play-button">▶</div>
+<iframe data-src="https://www.youtube.com/embed/fo4k89qQ91A?autoplay=1" allow="autoplay" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+</div>
+
+<a class="back" href="index.html">← Back to home</a>
+
 </div>
 
 <script>
