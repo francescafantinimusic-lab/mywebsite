@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diary — Francesca Fantini</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--white);
+      position: relative;
+    }
+
+    /* ===== BACKGROUND ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("hilma af klint.jpg") center / cover no-repeat;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      padding: 70px 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
+    /* ===== DIARY BOX ===== */
+    .diary-box {
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 50px 40px;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .diary-box p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    /* ===== DIARY LINK ===== */
+    .diary-link a {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 30px;
+      border: 1px solid white;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      transition: all 0.3s ease;
+    }
+
+    .diary-link a:hover {
+      background: white;
+      color: black;
+    }
+
+    /* ===== BACK HOME ===== */
+    .back-home {
+      margin-top: 40px;
+    }
+
+    .back-home a {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-home a:hover {
+      opacity: 1;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      .diary-box {
+        padding: 35px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Diary</h1>
+    <p>Francesca Fantini</p>
+  </header>
+
+  <!-- ===== DIARY CONTENT ===== -->
+  <main class="diary-box">
+    <p>
+      This diary collects reflections, notes, images, and fragments emerging from my
+      artistic research process. It functions as an evolving space where practice,
+      listening, and experimentation intersect.
+    </p>
+
+    <div class="diary-link">
+      <a href="https://www.canva.com/design/DAGHxQlx3js/DKJq_3R45BU-dveIgm6AjA/view?utm_content=DAGHxQlx3js&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h332f02ca8d"
+         target="_blank">
+        Open Diary
+      </a>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+</body>
+</html>
+
