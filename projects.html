@@ -11,108 +11,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-   :root {
-  --white: #FFFFFF;
-  --black: #000000;
-}
-
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: var(--white);
-  position: relative;
-}
-
-/* Background image */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("hilma af klint.jpg") center / cover no-repeat;
-  z-index: -2;
-}
-
-/* Grey overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
-}
-
-/* Ensure content is above background */
-body > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --white: #ffffff;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--bg);
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
       color: var(--white);
+      position: relative;
     }
 
+    /* ===== BACKGROUND ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("hilma af klint.jpg") center / cover no-repeat;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== PAGE ===== */
     .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 70px 40px;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 50px;
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 60px;
     }
 
-    /* ===== PROJECT GRID ===== */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 1200px;
-      width: 100%;
-    }
-
+    /* ===== PROJECT BOX ===== */
     .project {
-  text-align: center;
-  padding: 25px;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-}
+      display: flex;
+      gap: 35px;
+      padding: 35px;
+      margin-bottom: 40px;
 
-
-    .project h2 {
-      font-size: 1.1rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      color: var(--white);
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      align-items: center;
     }
 
-    /* ===== VIDEO THUMBNAIL ===== */
+    /* ===== VIDEO ===== */
     .video-box {
       position: relative;
-      width: 100%;
+      flex: 1;
       aspect-ratio: 16 / 9;
       cursor: pointer;
       overflow: hidden;
-      background: #000;
-      margin-bottom: 15px;
+      background: black;
     }
 
     .video-box img {
@@ -128,13 +104,7 @@ body > * {
       align-items: center;
       justify-content: center;
       font-size: 3rem;
-      color: white;
-      background: rgba(0,0,0,0.25);
-      transition: background 0.3s ease;
-    }
-
-    .video-box:hover .play-button {
-      background: rgba(0,0,0,0.45);
+      background: rgba(0, 0, 0, 0.3);
     }
 
     .video-box iframe {
@@ -144,28 +114,41 @@ body > * {
       border: none;
     }
 
-    .project p {
+    /* ===== TEXT ===== */
+    .project-text {
+      flex: 1;
+    }
+
+    .project-text h2 {
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .project-text p {
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.6;
       opacity: 0.9;
     }
 
+    /* ===== BACK ===== */
     .back {
-      margin-top: 50px;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: 0.1em;
+      display: block;
+      margin-top: 60px;
+      text-align: center;
       font-size: 0.85rem;
+      letter-spacing: 0.1em;
     }
 
     .back:hover {
-      color: var(--black);
+      opacity: 0.6;
     }
 
     /* ===== MOBILE ===== */
     @media (max-width: 900px) {
-      .projects {
-        grid-template-columns: 1fr;
+      .project {
+        flex-direction: column;
       }
     }
   </style>
@@ -173,86 +156,114 @@ body > * {
 
 <body>
 
-  <div class="container">
-    <h1>Projects</h1>
+<div class="container">
+  <h1>Projects</h1>
 
-    <div class="projects">
-
-      <!-- SOLO -->
-      <div class="project">
-        <h2>Solo</h2>
-        <div class="video-box" onclick="playVideo(this)">
-          <img src="solo-thumbnail.jpg" alt="Solo project">
-          <div class="play-button">▶</div>
-          <iframe
-            data-src="https://www.youtube.com/embed/SY4_szwLj_Q?autoplay=1"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <p>
-          Solo saxophone project exploring sound, space,
-          extended techniques and improvisation.
-        </p>
-      </div>
-
-      <!-- AIRKEYCHAINS TRIO -->
-      <div class="project">
-        <h2>airkeychains trio</h2>
-       <div class="video-box" onclick="playVideo(this)">
-          <img src="airkeychains-thumbnail.jpg" alt="airkeychains trio">
-          <div class="play-button">▶</div>
-          <iframe
-            data-src="https://www.youtube.com/embed/fo4k89qQ91A?autoplay=1"
-            allow="autoplay; encrypted-media"
-    allowfullscreen>
-          </iframe>
-        </div>
-        <p>
-          Trio project focused on free improvisation,
-          rooted in contemporary chamber music practice.
-        </p>
-      </div>
-
-      <!-- CHAMBER MUSIC -->
-      <div class="project">
-        <h2>Chamber Music</h2>
-        <div class="video-box" onclick="playVideo(this)">
-          <img src="chamber-thumbnail.jpg" alt="Chamber music">
-          <div class="play-button">▶</div>
-          <iframe
-            data-src="https://www.youtube.com/embed/BydcEgRdMH4?autoplay=1"
-            allow="autoplay; encrypted-media"
-    allowfullscreen>
-          </iframe>
-        </div>
-        <p>
-          Chamber music performances with contemporary
-          ensembles and composers.
-        </p>
-      </div>
-
+  <!-- SOLO -->
+  <div class="project">
+    <div class="video-box" onclick="playVideo(this)">
+      <img src="solo-thumbnail.jpg">
+      <div class="play-button">▶</div>
+      <iframe data-src="https://www.youtube.com/embed/SY4_szwLj_Q?autoplay=1"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
-    <a class="back" href="index.html">← Back to home</a>
+    <div class="project-text">
+      <h2>Solo</h2>
+      <p>
+        Solo saxophone project exploring sound, space, embodiment,
+        extended techniques and free improvisation.
+      </p>
+    </div>
   </div>
 
-  <!-- SCRIPT -->
-  <script>
-  function playVideo(container) {
-    const iframe = container.querySelector("iframe");
-    const img = container.querySelector("img");
-    const playBtn = container.querySelector(".play-button");
+  <!-- AIRKEYCHAINS -->
+  <div class="project">
+    <div class="video-box" onclick="playVideo(this)">
+      <img src="airkeychains-thumbnail.jpg">
+      <div class="play-button">▶</div>
+      <iframe data-src="https://www.youtube.com/embed/fo4k89qQ91A?autoplay=1"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-    iframe.src = iframe.dataset.src; // <<< THIS WAS MISSING
+    <div class="project-text">
+      <h2>airkeychains trio</h2>
+      <p>
+        Trio dedicated to free improvisation and collective composition,
+        rooted in contemporary chamber music practice.
+      </p>
+    </div>
+  </div>
 
-    img.style.display = "none";
-    playBtn.style.display = "none";
-    iframe.style.display = "block";
-  }
+  <!-- CHAMBER MUSIC -->
+  <div class="project">
+    <div class="video-box" onclick="playVideo(this)">
+      <img src="chamber-thumbnail.jpg">
+      <div class="play-button">▶</div>
+      <iframe data-src="https://www.youtube.com/embed/BydcEgRdMH4?autoplay=1"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="project-text">
+      <h2>Chamber Music</h2>
+      <p>
+        Performances with contemporary ensembles and composers,
+        spanning written and hybrid practices.
+      </p>
+    </div>
+  </div>
+
+  <!-- EUROPEAN MUSIC COLLECTIVE -->
+  <div class="project">
+    <div class="video-box" onclick="playVideo(this)">
+      <img src="emc-thumbnail.jpg">
+      <div class="play-button">▶</div>
+      <iframe data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="project-text">
+      <h2>European Music Collective</h2>
+      <p>
+        International ensemble focusing on collaborative creation,
+        experimental notation, and transnational artistic exchange.
+      </p>
+    </div>
+  </div>
+
+  <!-- CHE GENERE DI MUSICA ASCOLTI -->
+  <div class="project">
+    <div class="video-box" onclick="playVideo(this)">
+      <img src="chegenere-thumbnail.jpg">
+      <div class="play-button">▶</div>
+      <iframe data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="project-text">
+      <h2>Che genere di musica ascolti</h2>
+      <p>
+        Interdisciplinary performance project investigating listening,
+        identity, and cultural categorization through sound.
+      </p>
+    </div>
+  </div>
+
+  <a class="back" href="index.html">← Back to home</a>
+</div>
+
+<script>
+function playVideo(box) {
+  const iframe = box.querySelector("iframe");
+  const img = box.querySelector("img");
+  const play = box.querySelector(".play-button");
+
+  iframe.src = iframe.dataset.src;
+  iframe.style.display = "block";
+  img.style.display = "none";
+  play.style.display = "none";
+}
 </script>
-
-  </script>
 
 </body>
 </html>
