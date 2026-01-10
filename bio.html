@@ -25,12 +25,82 @@
       height: 100%;
       font-family: 'Montserrat', sans-serif;
     }
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto-play (slow, elegant)
+  setInterval(() => {
+    changeSlide(1);
+  }, 6000);
+</script>
 
     body {
       min-height: 100vh;
       color: var(--white);
       position: relative;
     }
+/* ===== SLIDESHOW ===== */
+.slideshow {
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Navigation arrows */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
+
+.nav:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slideshow {
+    height: 300px;
+  }
+}
 
     /* ===== BACKGROUND IMAGE ===== */
     body::before {
@@ -194,13 +264,18 @@ Since February 2026 she has been artist in residence at Intro in Situ, Maastrich
     Alongside her performance practice, Fantini is currently pursuing a PhD at Roma Tre University, where her research centers on embodiment and non-idiomatic improvisation in transdisciplinary artistic environments.
     </p>
     <!-- ===== IMAGE GALLERY ===== -->
-    <div class="bio-gallery">
-      <img src="monheim3.jpg" alt="">
-      <img src="bio2.jpg" alt="">
-      <img src="bio3.jpg" alt="">
-      <img src="bio4.jpg" alt="">
-      <img src="bio5.jpg" alt="">
-    </div>
+    <div class="slideshow">
+  <button class="nav prev" onclick="changeSlide(-1)">‹</button>
+
+  <img src="bio1.jpg" class="slide active">
+  <img src="bio2.jpg" class="slide">
+  <img src="bio3.jpg" class="slide">
+  <img src="bio4.jpg" class="slide">
+  <img src="bio5.jpg" class="slide">
+
+  <button class="nav next" onclick="changeSlide(1)">›</button>
+</div>
+
 
     <!-- ===== BACK HOME ===== -->
     <div class="back-home">
