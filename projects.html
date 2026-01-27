@@ -160,9 +160,26 @@
     }
 
     /* ===== MOBILE ===== */
-    @media (max-width: 900px) {
-      .project {
-        flex-direction: column;
+        @media (max-width: 900px) {
+
+  .project {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .project-text {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .project-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
       }
     }
   </style>
