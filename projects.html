@@ -10,180 +10,177 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --white: #ffffff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--white);
-      position: relative;
-
-    }
-
-    /* ===== BACKGROUND ===== */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("hilma af klint.jpg") center / cover no-repeat;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-    }
-
-    body > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ===== PAGE ===== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 70px 40px;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.6rem;
-      margin-bottom: 60px;
-    }
-
-    /* ===== PROJECT BOX ===== */
-    .project {
-      display: flex;
-      gap: 35px;
-      padding: 35px;
-      margin-bottom: 40px;
-
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      border-radius: 14px;
-      align-items: center;
-    }
-
-    /* ===== VIDEO ===== */
-    .video-box {
-      position: relative;
-      flex: 1;
-      aspect-ratio: 16 / 9;
-      cursor: pointer;
-      overflow: hidden;
-      background: black;
-    }
-
-    .video-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .play-button {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    .video-box iframe {
-      display: none;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-/* ===== IMAGE BOX (NO VIDEO) ===== */
-.image-box {
-  flex: 1;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: black;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-    /* ===== TEXT ===== */
-    .project-text {
-      flex: 1;
-    }
-
-    .project-text h2 {
-      font-size: 1.2rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    .project-text p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    /* ===== BACK ===== */
-    .back {
-      display: block;
-      margin-top: 60px;
-      text-align: center;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-    }
-
-    .back:hover {
-      opacity: 0.6;
-    }
-
-    /* ===== MOBILE ===== */
-        @media (max-width: 900px) {
-
-  .project {
-    flex-direction: column;
-    padding: 25px;
+ <style>
+  :root {
+    --white: #ffffff;
+    --bg-green: #1f2b24;
   }
 
-  .project-text {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    background-color: var(--bg-green);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .nav a:hover {
+    opacity: 0.6;
+  }
+
+  /* ===== PAGE ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 60px;
+  }
+
+  /* ===== PROJECT BOX ===== */
+  .project {
+    display: flex;
+    gap: 35px;
+    padding: 35px;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    align-items: center;
+  }
+
+  /* ===== VIDEO ===== */
+  .video-box {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+    background: black;
+  }
+
+  .video-box img {
     width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .video-box iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ===== IMAGE BOX ===== */
+  .image-box {
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: black;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ===== TEXT ===== */
+  .project-text {
+    flex: 1;
+  }
+
+  .project-text h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
   }
 
   .project-text p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.6;
+    opacity: 0.9;
   }
-}
 
-      }
+  /* ===== BACK ===== */
+  .back {
+    display: block;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .back:hover {
+    opacity: 0.6;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 900px) {
+    .nav {
+      flex-wrap: wrap;
+      gap: 18px;
     }
-  </style>
+
+    .project {
+      flex-direction: column;
+      padding: 25px;
+    }
+
+    .project-text {
+      width: 100%;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .project-text p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
 
 <body>
