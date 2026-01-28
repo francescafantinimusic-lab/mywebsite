@@ -14,6 +14,7 @@
   --white: #ffffff;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -24,55 +25,79 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* BODY */
 body {
   min-height: 100vh;
+  background: #18EDB4;
   color: var(--white);
-  position: relative;
-
 }
 
-/* BACKGROUND */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("hilma af klint.jpg") center / cover no-repeat;
-  z-index: -2;
+/* SHARED GLASS STYLE */
+.glass-box {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: -1;
+/* NAVIGATION */
+.nav {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+/* CONTAINER */
 .container {
-  padding: 60px 40px;
+  padding: 40px 40px 60px;
   max-width: 1300px;
   margin: auto;
 }
 
-h1 {
+/* PAGE TITLE */
+.page-title {
+  max-width: 500px;
+  margin: 40px auto 60px;
+  padding: 20px;
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 60px;
 }
 
-/* GRID STRUCTURE */
+.page-title h1 {
+  font-size: 2.4rem;
+}
+
+/* GRID */
 .media-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-/* MONHEIM ROW */
+/* MONHEIM FULL ROW */
 .monheim {
   grid-column: 1 / -1;
 }
 
-/* LAST ROW (2 ITEMS CENTERED) */
+/* LAST ROW */
 .last-row {
   grid-column: 1 / -1;
   display: grid;
@@ -82,10 +107,7 @@ h1 {
 
 /* PROJECT CARD */
 .project {
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
   padding: 25px;
-  border-radius: 14px;
   text-align: center;
 }
 
@@ -99,7 +121,7 @@ h1 {
 /* VIDEO */
 .video-box {
   position: relative;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   cursor: pointer;
   background: black;
   overflow: hidden;
@@ -149,14 +171,19 @@ h1 {
   object-fit: cover;
 }
 
-.back {
-  display: block;
+/* BACK BUTTON */
+.back-wrapper {
   text-align: center;
   margin-top: 60px;
-  text-decoration: none;
-  letter-spacing: 0.1em;
+}
+
+.back {
+  display: inline-block;
+  padding: 15px 25px;
   font-size: 0.85rem;
+  letter-spacing: 0.1em;
   color: var(--white);
+  text-decoration: none;
 }
 
 /* MOBILE */
@@ -178,87 +205,113 @@ h1 {
 
 <body>
 
+<!-- NAVIGATION -->
+<nav class="nav glass-box">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="media.html" class="active">Media</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
 <div class="container">
-<h1>Media</h1>
 
-<div class="media-grid">
+  <!-- TITLE -->
+  <div class="page-title glass-box">
+    <h1>Media</h1>
+  </div>
 
-<!-- ROW 1 -->
-<div class="project">
-<h2>when glass breaks</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="thumbnail-whenglass.png">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/VmqTB_a8dLM" allow="autoplay" allowfullscreen></iframe>
-</div>
-<p>Video credits: Rosamaria Montalbano</p>
-</div>
+  <div class="media-grid">
 
-<div class="project">
-<h2>it reflects</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="it reflects.png">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/SY4_szwLj_Q" allow="autoplay" allowfullscreen></iframe>
-</div>
-<p>This suite explores the body’s resilience: fragile and subjected to recurring pain, yet persistent and alive. In the performance, the body itself becomes a sound source—through movement, muscular contractions, and breath—creating subtle counterpoints to the saxophone’s melodies and textures.
+    <!-- ROW 1 -->
+    <div class="project glass-box">
+      <h2>when glass breaks</h2>
+      <div class="video-box" onclick="playVideo(this)">
+        <img src="thumbnail-whenglass.png">
+        <div class="play-button">▶</div>
+        <iframe data-src="https://www.youtube.com/embed/VmqTB_a8dLM" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p>Video credits: Rosamaria Montalbano</p>
+    </div>
 
-Free improvisation and concept by Francesca Fantini.
- </p>
-</div>
+    <div class="project glass-box">
+      <h2>it reflects</h2>
+      <div class="video-box" onclick="playVideo(this)">
+        <img src="it reflects.png">
+        <div class="play-button">▶</div>
+        <iframe data-src="https://www.youtube.com/embed/SY4_szwLj_Q" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p>
+        This suite explores the body’s resilience: fragile and subjected to recurring pain,
+        yet persistent and alive. Free improvisation and concept by Francesca Fantini.
+      </p>
+    </div>
 
-<div class="project">
-<h2>in fragments</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="thumbnail-infragments.png">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/zjdubxrvj_A" allow="autoplay" allowfullscreen></iframe>
-</div>
-<p>Audio recording, mix and master by Margo Sanda.</p>
-</div>
+    <div class="project glass-box">
+      <h2>in fragments</h2>
+      <div class="video-box" onclick="playVideo(this)">
+        <img src="thumbnail-infragments.png">
+        <div class="play-button">▶</div>
+        <iframe data-src="https://www.youtube.com/embed/zjdubxrvj_A" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p>Audio recording, mix and master by Margo Sanda.</p>
+    </div>
 
-<!-- MONHEIM -->
-<div class="project monheim">
-<h2>Monheim Triennale II with Selendis S.A. Johnson: Reflections on the German Revolution (1918-1919, and more)</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="monheim4.jpg">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/ZPP745cgdJA" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
+    <!-- MONHEIM -->
+    <div class="project glass-box monheim">
+      <h2>
+        Monheim Triennale II with Selendis S.A. Johnson:
+        Reflections on the German Revolution (1918–1919, and more)
+      </h2>
+      <div class="video-box" onclick="playVideo(this)">
+        <img src="monheim4.jpg">
+        <div class="play-button">▶</div>
+        <iframe data-src="https://www.youtube.com/embed/ZPP745cgdJA" allow="autoplay" allowfullscreen></iframe>
+      </div>
 
-<div class="gallery">
-<img src="monheim1.jpg">
-<img src="monheim2.jpg">
-<img src="monheim3.jpg">
-</div>
-</div>
+      <div class="gallery">
+        <img src="monheim1.jpg">
+        <img src="monheim2.jpg">
+        <img src="monheim3.jpg">
+      </div>
+    </div>
 
-<!-- LAST ROW -->
-<div class="last-row">
-<div class="project">
-<h2>Study for Alto Saxophone and Percussion</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="chamber-thumbnail.jpg">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/BydcEgRdMH4?autoplay=1" allow="autoplay" allowfullscreen></iframe>
-</div>
-<p>Study for Alto Saxophone and Percussion, by Simon Steen-Andersen. Alto Saxophone: Francesca Fantini, Percussions: Francesco Paladini.</p>
-</div>
+    <!-- LAST ROW -->
+    <div class="last-row">
+      <div class="project glass-box">
+        <h2>Study for Alto Saxophone and Percussion</h2>
+        <div class="video-box" onclick="playVideo(this)">
+          <img src="chamber-thumbnail.jpg">
+          <div class="play-button">▶</div>
+          <iframe data-src="https://www.youtube.com/embed/BydcEgRdMH4" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        <p>
+          Study by Simon Steen-Andersen.
+          Alto Saxophone: Francesca Fantini,
+          Percussions: Francesco Paladini.
+        </p>
+      </div>
 
-<div class="project">
-<h2>Rhythmes Lyriques</h2>
-<div class="video-box" onclick="playVideo(this)">
-<img src="rhythmes-thumbnail.jpeg">
-<div class="play-button">▶</div>
-<iframe data-src="https://www.youtube.com/embed/u6JSjIrAPS4" allow="autoplay" allowfullscreen></iframe>
-</div>
-  <p>Rhythmes Lyriqes by Lucie Robert. Martina Madini, soprano saxophone, Francesca Fantini, tenor saxophone.</p>
-</div>
-</div>
+      <div class="project glass-box">
+        <h2>Rhythmes Lyriques</h2>
+        <div class="video-box" onclick="playVideo(this)">
+          <img src="rhythmes-thumbnail.jpeg">
+          <div class="play-button">▶</div>
+          <iframe data-src="https://www.youtube.com/embed/u6JSjIrAPS4" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        <p>
+          Rhythmes Lyriques by Lucie Robert.
+          Martina Madini (soprano sax),
+          Francesca Fantini (tenor sax).
+        </p>
+      </div>
+    </div>
 
-</div>
+  </div>
 
-<a class="back" href="index.html">← Back to home</a>
+  <!-- BACK -->
+  <div class="back-wrapper">
+    <a class="back glass-box" href="index.html">← Back to home</a>
+  </div>
 
 </div>
 
