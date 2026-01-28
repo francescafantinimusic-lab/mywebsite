@@ -34,24 +34,39 @@
     text-decoration: none;
   }
 
-  /* ===== NAV ===== */
-  .nav {
-    padding: 25px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-  }
+   /* SHARED GLASS STYLE */
+.glass-box {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+}
 
-  .nav a {
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.9;
-  }
+/* NAVIGATION */
+.nav {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
 
-  .nav a:hover {
-    opacity: 0.6;
-  }
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
 
   /* ===== PAGE ===== */
   .container {
@@ -184,15 +199,17 @@
 </head>
 
 <body> 
-  <nav class="nav">
+  <!-- NAVIGATION -->
+<nav class="nav glass-box">
   <a href="index.html">Home</a>
   <a href="bio.html">Bio</a>
   <a href="projects.html">Projects</a>
   <a href="diary.html">Diary</a>
-  <a href="media.html">Media</a>
+  <a href="media.html" class="active">Media</a>
   <a href="contact.html">Contact</a>
 </nav>
 
+<div class="container">
 
 <div class="container">
   <h1>Projects</h1>
