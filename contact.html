@@ -71,6 +71,33 @@
       font-weight: 300;
     }
 
+        /* NAVIGATION */
+.nav {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  text-decoration: none;
+}
+
     /* ===== CONTACT BOX ===== */
     .contact-box {
       max-width: 600px;
@@ -147,6 +174,17 @@
 <body>
 
   <!-- ===== HEADER ===== -->
+
+  <!-- NAVIGATION -->
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="bio.html">Bio</a>
+  <a href="projects.html">Projects</a>
+  <a href="diary.html">Diary</a>
+  <a href="media.html" class="active">Media</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
   <header>
     <h1>Contact</h1>
     <p>Francesca Fantini</p>
