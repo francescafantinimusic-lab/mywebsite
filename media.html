@@ -9,20 +9,58 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --white: #ffffff;
-}
+    <style>
+    :root {
+      --white: #FFFFFF;
+      --green-accent: #FFFFFF;
+    }
 
-/* RESET */
-* {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ===== BACKGROUND IMAGE ===== */
+body {
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  position: relative;
 }
 
-html, body {
-  font-family: 'Montserrat', sans-serif;
+
+    body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("treeofknowledge.jpg") center / cover no-repeat;
+  z-index: -2;
+}
+
+    body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* adjust opacity */
+  z-index: -1;
+}
+
+    /* Everything above background */
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav, main, footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* BODY */
