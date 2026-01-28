@@ -31,13 +31,46 @@
       color: var(--white);
       position: relative;
     }
+/* SHARED GLASS STYLE */
+.glass-box {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+}
 
+    /* NAVIGATION */
+.nav {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  text-decoration: none;
+}
+    
     /* ===== BACKGROUND ===== */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: url("hilma af klint.jpg") center / cover no-repeat;
+      background: url("treeofknowledge.jpg") center / cover no-repeat;
       z-index: -2;
     }
 
@@ -185,9 +218,11 @@
 
   <!-- HEADER -->
   <header>
+      <div class="page-title glass-box">
     <h1>Bio</h1>
     <p>Francesca Fantini</p>
   </header>
+</div>
 
   <!-- CONTENT -->
   <main class="content">
@@ -242,10 +277,11 @@ Francesca earned her Bachelor’s degree in Classical Saxophone from Conservator
       <button class="nav next" onclick="changeSlide(1)">›</button>
     </div>
 
-    <!-- BACK HOME -->
-    <div class="back-home">
-      <a href="index.html">← Back to Home</a>
-    </div>
+  <!-- BACK -->
+  <div class="back-wrapper">
+    <a class="back glass-box" href="index.html">← Back to home</a>
+  </div>
+
 
   </main>
 
