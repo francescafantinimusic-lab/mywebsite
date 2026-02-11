@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press — Francesca Fantini</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --white: #FFFFFF;
+      --green-accent: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ===== BACKGROUND IMAGE ===== */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  position: relative;
+}
+
+
+    body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("treeofknowledge.jpg") center / cover no-repeat;
+  z-index: -2;
+}
+
+    body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* adjust opacity */
+  z-index: -1;
+}
+
+    /* Everything above background */
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  background: #FFFFFF;
+  color: var(--white);
+}
+
+
+   /* SHARED GLASS STYLE */
+.glass-box {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+}
+
+/* NAVIGATION */
+.nav {
+  max-width: 1300px;
+  margin: 30px auto 0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+  /* ===== PAGE ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 60px;
+  }
+
+  /* ===== PRESS BOX ===== */
+  .project {
+    display: flex;
+    gap: 35px;
+    padding: 35px;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    align-items: center;
+  }
+
+  /* ===== VIDEO ===== */
+  .video-box {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+    background: black;
+  }
+
+  .video-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .video-box iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ===== IMAGE BOX ===== */
+  .image-box {
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: black;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ===== TEXT ===== */
+  .project-text {
+    flex: 1;
+  }
+
+  .project-text h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .project-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+ /* BACK BUTTON */
+.back-wrapper {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.back {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 900px) {
+    .nav {
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .project {
+      flex-direction: column;
+      padding: 25px;
+    }
+
+    .project-text {
+      width: 100%;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .project-text p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+</head>
+
+<body> 
+  <!-- NAVIGATION -->
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="bio.html">Bio</a>
+  <a href="projects.html">Projects</a>
+  <a href="diary.html">Diary</a>
+  <a href="media.html">Media</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="page-title">
+  <h1>Projects</h1>
+
+  <!-- IL MANIFESTO -->
+  <div class="project">
+  <div class="image-box">
+    <img src="monheim1.jpg" alt="Monheim Triennale II">
+  </div>
+
+   <div class="project-text">
+  <h2>Il Manifesto</h2>
+  <p>
+Il Manifesto about Monheim Triennale II with Selendis Alexander Sebastian Johnson. Article by Marcello Lorrai. </p>
+
+ <a href="monheim.pdf" target="_blank">
+  Read article
+</a>
+</div>
+
+  
+
+   <!-- GIORNALE DI BRESCIA -->
+  <div class="project">
+  <div class="image-box">
+    <img src="kaunas.jpg" alt="GDB">
+  </div>
+
+   <div class="project-text">
+  <h2>Intervista per Giornale di Brescia</h2>
+  <p>
+Modello i suoni sentendo ciò che mi dice il corpo, intervista a cura di Enrico Raggi </p>
+
+ <a href="gdb.pdf" target="_blank">
+  Read article
+</a>
+</div>
+  </div>
+
+  <!-- PODCAST GAI -->
+  <div class="project">
+  <div class="image-box">
+    <img src="alto.jpg" alt="GDB">
+  </div>
+
+   <div class="project-text">
+  <h2>MOVIN' UP | EMERGERE</h2>
+  <p>
+Un’esperienza fatta un po’ per caso, una di quelle dove ci si finisce buttandosi e lasciandosi andare, dove si uniscono l’istinto e un pizzico d’innocenza, che non fa mai male. Una di quest’esperienze, in particolare, è successa a Vilnius, capitala lituana, dove Francesca Fantini, sassofonista e performer dell’ambito musicale, durante un erasmus ha incontrato i due ragazzi con cui avrebbe poi formato il progetto Airkeychains, che mira a celebrare l’autenticità dell’improvvisazione musicale, catturando l’emotività del momento presente, e creando dialoghi oltre la quarta parete, dove anche il pubblico gioca il suo ruolo. Il trio, lo scorso marzo, si è esibito su e giù per l’Olanda, dove grazie alla collaborazione con il Conservatorio di Maastricht, ha avuto la possibilità d’improvvisare in studi privati, birrerie e gallerie d’arte.
+ <a href="gdb.pdf" target="_blank">
+  Ascolta l'intervista
+</a>
+</div>
+  </div>
+  </div>
+
+ 
+
+  <!-- BACK -->
+  <div class="back-wrapper">
+    <a class="back glass-box" href="index.html">← Back to home</a>
+  </div>
+
+<script>
+function playVideo(box) {
+  const iframe = box.querySelector("iframe");
+  const img = box.querySelector("img");
+  const play = box.querySelector(".play-button");
+
+  iframe.src = iframe.dataset.src;
+  iframe.style.display = "block";
+  img.style.display = "none";
+  play.style.display = "none";
+}
+</script>
+
+</body>
+</html>
