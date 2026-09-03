@@ -1,125 +1,80 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Francesca Fantini | Music · Saxophone & Artistic Researcher</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Francesca Fantini Saxophone, Contemporary and Improviser. Projects, music, performances and creative music work."
-  />
+  <title>Francesca Fantini | Saxophonist & Artistic Researcher</title>
 
-  <meta name="author" content="Francesca Fantini" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "mainEntity": {
-    "@type": "Person",
-    "@id": "https://francescafantini.com/#francesca-fantini",
-    "name": "Francesca Fantini",
-    "url": "https://francescafantini.com/",
-    "jobTitle": "Saxophonist and Artistic Researcher",
-    "description": "Francesca Fantini is an Italian saxophonist and artistic researcher working between contemporary music and free improvisation.",
-    "image": "https://francescafantini.com/fantini2creditsmontalbano.png",
-    "sameAs": [
-      "https://www.instagram.com/frafantini_saxophone/",
-      "https://www.youtube.com/@frafantinisaxophone",
-      "https://www.facebook.com/francesca.k.fantini"
-    ]
-  }
-}
-</script>
-
-
-
-
-</head>
+  <meta name="description" content="Francesca Fantini is an Italian saxophonist and artistic researcher working between contemporary music, free improvisation and embodied performance.">
+  <meta name="author" content="Francesca Fantini">
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://francescafantini.com/#francesca-fantini",
+      "name": "Francesca Fantini",
+      "url": "https://francescafantini.com/",
+      "jobTitle": "Saxophonist and Artistic Researcher",
+      "description": "Francesca Fantini is an Italian saxophonist and artistic researcher working between contemporary music and free improvisation.",
+      "image": "https://francescafantini.com/fantini2creditsmontalbano.png",
+      "sameAs": [
+        "https://www.instagram.com/frafantini_saxophone/",
+        "https://www.youtube.com/@frafantinisaxophone",
+        "https://www.facebook.com/francesca.k.fantini"
+      ]
+    }
+  }
+  </script>
+
 
   <style>
-    :root {
-      --white: #ffffff;
-    }
 
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
-      color: var(--white);
-      position: relative;
+
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+
+      color: white;
+      background-image: url("treeofknowledge.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
-/* SHARED GLASS STYLE */
-.glass-box {
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
-  border-radius: 14px;
-}
 
-    /* BACK BUTTON */
-.back-wrapper {
-  text-align: center;
-  margin-top: 60px;
-}
 
-.back {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: var(--white);
-  text-decoration: none;
-}
-    
-    /* NAVIGATION */
-.nav {
-  max-width: 1300px;
-  margin: 30px auto 0;
-  padding: 14px 30px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
+    /* DARK OVERLAY */
 
-.nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
-.nav a:hover {
-  opacity: 1;
-}
-
-.nav a.active {
-  text-decoration: none;
-}
-    
-    /* ===== BACKGROUND ===== */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: url("treeofknowledge.jpg") center / cover no-repeat;
+
+      background: rgba(0, 0, 0, 0.48);
+
       z-index: -2;
     }
 
@@ -127,213 +82,650 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.45)
+      );
+
       z-index: -1;
+      pointer-events: none;
     }
 
-    body > * {
-      position: relative;
-      z-index: 1;
+
+    /* NAVIGATION */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 34px;
+
+      padding: 28px 20px;
+
+      z-index: 10;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55),
+        transparent
+      );
     }
 
-    a {
-      color: var(--white);
+    .nav a {
+      color: white;
       text-decoration: none;
+
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      opacity: 0.65;
+
+      transition: opacity 0.3s ease;
     }
 
-   
-    /* PAGE TITLE */
-.page-title {
-  max-width: 500px;
-  margin: 40px auto 60px;
-  padding: 20px;
-  text-align: center;
-}
-
-.page-title h1 {
-  font-size: 2.4rem;
-}
-
-    /* ===== BIO BOX ===== */
-    .content {
-      max-width: 760px;
-      margin: 50px auto 40px;
-      padding: 50px 40px;
-      line-height: 1.8;
-      font-size: 1rem;
-
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-radius: 8px;
-    }
-
-    .content p {
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-
-    /* ===== SLIDESHOW ===== */
-    .slideshow {
-      position: relative;
-      margin-top: 40px;
-      width: 100%;
-      height: 420px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .slide.active {
+    .nav a:hover,
+    .nav a.active {
       opacity: 1;
     }
 
-    .nav {
-    gap: 16px;
-    padding: 20px 16px;
-  }
 
-     /* ===== MOBILE ===== */
-  @media (max-width: 900px) {
-    .nav {
-      flex-wrap: wrap;
-      gap: 18px;
-    }
+    /* MAIN */
 
-    .project {
-      flex-direction: column;
-      padding: 25px;
-    }
-
-    .project-text {
+    main {
       width: 100%;
-      overflow-wrap: break-word;
-      hyphens: auto;
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      padding: 150px 50px 100px;
     }
 
-    .project-text p {
+
+    /* HEADER */
+
+    .bio-header {
+      padding-bottom: 55px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+
+      opacity: 0.6;
+    }
+
+    .bio-header h1 {
+      margin: 0;
+
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.95;
+
+      font-weight: 300;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 25px;
+
       font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      opacity: 0.72;
     }
-  }
-}
+
+
+    /* HERO IMAGE */
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 85px;
+
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-height: 650px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+    /* SECTIONS */
+
+    .bio-section {
+      display: grid;
+
+      grid-template-columns: 180px 1fr;
+
+      gap: 50px;
+
+      padding: 35px 0 60px;
+
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+
+      opacity: 0.55;
+    }
+
+    .section-content {
+      max-width: 720px;
+    }
+
+    .section-content p {
+      margin: 0 0 24px;
+
+      font-size: 1rem;
+      line-height: 1.9;
+
+      color: rgba(255,255,255,0.88);
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* HIGHLIGHT TEXT */
+
+    .statement {
+      font-size: clamp(1.45rem, 3vw, 2.2rem) !important;
+      line-height: 1.45 !important;
+
+      font-weight: 300;
+
+      color: white !important;
+    }
+
+
+    /* SELECTED ACTIVITIES */
+
+    .activity {
+      display: grid;
+
+      grid-template-columns: 70px 1fr;
+
+      padding: 14px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .activity:last-child {
+      border-bottom: none;
+    }
+
+    .activity-year {
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+
+    .activity-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .activity-text strong {
+      font-weight: 500;
+    }
+
+
+    /* SLIDESHOW */
+
+    .gallery {
+      margin-top: 25px;
+      position: relative;
+
+      width: 100%;
+      height: 580px;
+
+      overflow: hidden;
+    }
+
+    .gallery img {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: 0;
+
+      animation: slideshow 28s infinite;
+    }
+
+    .gallery img:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .gallery img:nth-child(2) {
+      animation-delay: 4s;
+    }
+
+    .gallery img:nth-child(3) {
+      animation-delay: 8s;
+    }
+
+    .gallery img:nth-child(4) {
+      animation-delay: 12s;
+    }
+
+    .gallery img:nth-child(5) {
+      animation-delay: 16s;
+    }
+
+    .gallery img:nth-child(6) {
+      animation-delay: 20s;
+    }
+
+    .gallery img:nth-child(7) {
+      animation-delay: 24s;
+    }
+
+    @keyframes slideshow {
+
+      0% {
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      18% {
+        opacity: 1;
+      }
+
+      23% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+
+    }
+
+
+    /* BACK BUTTON */
+
+    .back-wrapper {
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+
+      opacity: 0.55;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        gap: 17px;
+        padding: 22px 12px;
+      }
+
+      .nav a {
+        font-size: 0.58rem;
+        letter-spacing: 0.12em;
+      }
+
+      main {
+        padding: 120px 22px 70px;
+      }
+
+      .bio-header {
+        padding-bottom: 40px;
+      }
+
+      .bio-header h1 {
+        font-size: 3.4rem;
+      }
+
+      .subtitle {
+        font-size: 0.68rem;
+        line-height: 1.7;
+      }
+
+      .hero-image {
+        margin-bottom: 55px;
+      }
+
+      .bio-section {
+        display: block;
+
+        padding: 28px 0 45px;
+      }
+
+      .section-label {
+        margin-bottom: 25px;
+      }
+
+      .section-content p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+
+      .statement {
+        font-size: 1.35rem !important;
+      }
+
+      .gallery {
+        height: 400px;
+      }
+
+      .activity {
+        grid-template-columns: 55px 1fr;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
 
+  <!-- NAVIGATION -->
 
-  </style>  
-</head>
+  <nav class="nav">
 
-<body>
-  
-<!-- NAVIGATION -->
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="bio.html">Bio</a>
-  <a href="projects.html">Projects</a>
-  <a href="diary.html">Diary</a>
-  <a href="DATES.html">Dates</a>
-  <a href="media.html" class="active">Media</a>
-  <a href="press.html">Press</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <a href="index.html">Home</a>
 
-  <div class="container">
-    
-  <div class="page-title">
-  <h1>Biography</h1>
-</div>
+    <a href="bio.html" class="active">Bio</a>
 
-  <!-- CONTENT -->
-  <main class="content">
+    <a href="dates.html">Dates</a>
 
-    <p>
-Francesca Fantini is a saxophonist and artistic researcher whose work moves fluidly between contemporary music and free improvisation.</p> 
-<p>She is currently pursuing a PhD at Roma Tre University investigating how the body functions as both instrument and site of knowledge in free improvisational settings, challenging conventional hierarchies of musical form and authorship. Her artistic research and mission is to revitalise free improvisation practice and performance within the  European Contemporary Environment. 
-She is artist in residence at Intro in Situ, in the Dutch city of Maastricht, for the year 2026, where she is developing her project "Bodies of sounds, bodies of thoughts". </p>
+    <a href="media.html">Media</a>
 
-    <p>
-      Francesca’s milestones as performers include participations at Derby Elettrico Improvisation Orchestra, at Monheim Triennale II, with signature artist Selendis Sebastian Alexander Johnson, at EUYWO 2019. She has performed extensively across Europe in concert halls, festivals, and experimental spaces, including Muziekgebouw Eindhoven, Saarbrücken Radio Hall, Intro in Situ, Muzikos Ruduo Festivalis, ContemPLAY Festivalis, Kintai Music Festival.    </p>
+    <a href="projects.html">Projects</a>
 
-    <p>
-    She is a member of several  projects, including the contemporary improvisation trio <i>airkeychains</i>, the European Music Collective, and Duo Taíta with pianist Yi-Ling Wu.    
-    </p>
+    <a href="contact.html">Contact</a>
 
-    <p>
-As Artistic Researcher she gave presentations of her work about intersections between Contemporary Chamber Music and Free Improvisation in Ensemble for “Oi Dialogoi” congresses, organized by the Conservatory of Trento, and for the First International Doctoral Symposium of Siena Jazz.     </p>
-
-    <p>
-As an educator, she gave masterclasses and workshops in Higher Education Institutions like Conservatory of Brescia, National Academy of Dance of Rome.    
-    </p>
-
-    <p>
-She is actively advocating for equal gender representation in music with the project "Che genere di musica ascolti? - What gender of music do you listen to?" in collaboration with Martina Madini (saxophonist) and Elisa Belotti (journalist).
-    </p>
-
-    <p>
-In 2024, she was recognized as Artist of the Month by Giovani Artisti Italiani. She is awardee of the 2026 grant for Levi Campus. Since February 2026 she has been artist in residence at Intro in Situ, Maastricht, where she is developing her project “Bodies of Sound”.    
-    </p>
-
-    <p>
-Francesca earned her Bachelor’s degree in Classical Saxophone from Conservatorium Maastricht in 2021. In 2024, she completed a Master’s degree in Chamber Music at the Conservatory of Brescia with highest honors. During her Master’s Programme, she further expanded her artistic language at the Lithuanian Academy of Music and Theatre in Vilnius, where she focused on free improvisation and contemporary chamber music, developing an approach that bridges rigorous technique with exploratory sonic research.   
-    </p>
+  </nav>
 
 
-    <!-- SLIDESHOW -->
-    <div class="slideshow">
-      <button class="nav prev" onclick="changeSlide(-1)">‹</button>
 
-      <img src="monheim4.jpg" class="slide active">
-      <img src="monheim3.jpg" class="slide">
-      <img src="it reflects.png" class="slide">
-      <img src="contemplayfestivalis.jpg" class="slide">
-      <img src="Adaptationshock.jpeg" class="slide">
-      <img src="alto.jpg" class="slide"> 
-      <img src="tenor.jpg" class="slide"> 
-  
+  <main>
 
-      <button class="nav next" onclick="changeSlide(1)">›</button>
+
+    <!-- HEADER -->
+
+    <header class="bio-header">
+
+      <p class="eyebrow">Biography</p>
+
+      <h1>
+        Francesca<br>
+        Fantini
+      </h1>
+
+      <p class="subtitle">
+        Saxophonist · Artistic Researcher
+      </p>
+
+    </header>
+
+
+
+    <!-- HERO IMAGE -->
+
+    <div class="hero-image">
+
+      <img
+        src="fantini2creditsmontalbano.png"
+        alt="Francesca Fantini"
+      >
+
     </div>
 
- <!-- BACK -->
-  <div class="back-wrapper">
-    <a class="back glass-box" href="index.html">← Back to home</a>
-  </div>
 
+
+    <!-- ABOUT -->
+
+    <section class="bio-section">
+
+      <div class="section-label">
+        About
+      </div>
+
+      <div class="section-content">
+
+        <p class="statement">
+          Francesca Fantini is a saxophonist and artistic researcher whose work moves between contemporary music, free improvisation and embodied performance.
+        </p>
+
+        <p>
+          Her practice explores the relationship between sound, body, space and perception, moving across performance, experimentation and artistic research.
+        </p>
+
+        <p>
+          She performs both as a soloist and in collaborative projects, working with contemporary composers, improvisers and interdisciplinary artists.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ARTISTIC PRACTICE -->
+
+    <section class="bio-section">
+
+      <div class="section-label">
+        Practice
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          Her artistic practice is rooted in contemporary music and free improvisation, with a particular interest in extended saxophone techniques, experimental performance practices and the physical dimension of sound.
+        </p>
+
+        <p>
+          Alongside performance, Francesca develops artistic research projects investigating questions of embodiment, listening, gender representation and the role of the performer within contemporary musical practices.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SELECTED ACTIVITIES -->
+
+    <section class="bio-section">
+
+      <div class="section-label">
+        Selected
+      </div>
+
+      <div class="section-content">
+
+        <div class="activity">
+
+          <div class="activity-year">
+            2026
+          </div>
+
+          <div class="activity-text">
+            <strong>Artist in Residence</strong><br>
+            Intro in Situ — Maastricht
+          </div>
+
+        </div>
+
+
+        <div class="activity">
+
+          <div class="activity-year">
+            2026
+          </div>
+
+          <div class="activity-text">
+            <strong>PhD in Artistic Research</strong><br>
+            Roma Tre University
+          </div>
+
+        </div>
+
+
+        <div class="activity">
+
+          <div class="activity-year">
+            2024
+          </div>
+
+          <div class="activity-text">
+            <strong>Artist of the Month</strong><br>
+            GAI — Giovani Artisti Italiani
+          </div>
+
+        </div>
+
+
+        <div class="activity">
+
+          <div class="activity-year">
+            2024
+          </div>
+
+          <div class="activity-text">
+            <strong>Master in Saxophone</strong><br>
+            Conservatory of Brescia
+          </div>
+
+        </div>
+
+
+        <div class="activity">
+
+          <div class="activity-year">
+            2021
+          </div>
+
+          <div class="activity-text">
+            <strong>Bachelor in Saxophone</strong><br>
+            Conservatorium Maastricht
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- GALLERY -->
+
+    <section class="bio-section">
+
+      <div class="section-label">
+        Practice
+      </div>
+
+      <div class="section-content">
+
+        <div class="gallery">
+
+          <img src="monheim4.jpg" alt="">
+          <img src="monheim3.jpg" alt="">
+          <img src="it reflects.png" alt="">
+          <img src="contemplayfestivalis.jpg" alt="">
+          <img src="Adaptationshock.jpeg" alt="">
+          <img src="alto.jpg" alt="">
+          <img src="tenor.jpg" alt="">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RESEARCH -->
+
+    <section class="bio-section">
+
+      <div class="section-label">
+        Research
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          Francesca's research is developed through practice-led methodologies, combining performance, experimentation, writing and critical reflection.
+        </p>
+
+        <p>
+          Her work has been presented in concerts, festivals, workshops, artistic residencies and research contexts across Europe.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+    <div class="back-wrapper">
+
+      <a class="back" href="index.html">
+        ← Back to home
+      </a>
+
+    </div>
 
 
   </main>
 
-  <!-- SLIDESHOW SCRIPT -->
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove("active"));
-      slides[index].classList.add("active");
-    }
-
-    function changeSlide(direction) {
-      currentSlide = (currentSlide + direction + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    setInterval(() => {
-      changeSlide(1);
-    }, 6000);
-  </script>
 
 </body>
 </html>
+```
