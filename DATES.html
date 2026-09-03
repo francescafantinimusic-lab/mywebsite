@@ -273,87 +273,185 @@ body {
   <div class="page-title">
   <h1>DATES</h1>
 
-  <!-- UPCOMING DATES -->
-  <div class="project">
-  <div class="image-box">
-    <img src="airkeychains-thumbnail.jpg" alt="airkeychainstrio">
+    /* ===== AGENDA ===== */
+
+.agenda {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.agenda-year {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.agenda-month {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.event {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  padding: 25px 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+  transition: background 0.3s ease;
+}
+
+.event:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.event:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.event-date {
+  width: 100px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.month {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
+.event-info h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  margin-bottom: 8px;
+}
+
+.event-info p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.75;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+
+  .event {
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .event-date {
+    width: 65px;
+  }
+
+  .day {
+    font-size: 1.4rem;
+  }
+
+  .event-info h2 {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .event-info p {
+    font-size: 0.8rem;
+  }
+
+}
+ <div class="agenda">
+
+  <div class="agenda-year">2026</div>
+
+  <div class="agenda-month">OCTOBER</div>
+
+  <div class="event">
+    <div class="event-date">
+      <span class="day">06</span>
+      <span class="month">OCT</span>
+    </div>
+
+    <div class="event-info">
+      <h2>Muzikos Ruduo Festivalis</h2>
+      <p>Vilnius, Lithuania — with airkeychains trio</p>
+    </div>
   </div>
 
-   <div class="project-text">
-  <h2>06.10.2026</h2>
-  <h2>
-MUZIKOS RUDUO FESTIVALIS
-Vilnius, Lithuania, 
-with airkeychains trio
- </h2>
-<! ---- UPDATE INTO DIRECT LINK TO WEBSITE ---!>
 
-</div>
-  </div> 
+  <div class="event">
+    <div class="event-date">
+      <span class="day">12–18</span>
+      <span class="month">OCT</span>
+    </div>
 
-  
-
-   <!-- EMC TOUR -->
-  <div class="project">
-  <div class="image-box">
-    <img src="EMClogo.png" alt="EMC">
+    <div class="event-info">
+      <h2>European Music Collective — Fall Tour</h2>
+      <p>Düsseldorf · Eindhoven · Liège · Brussels</p>
+    </div>
   </div>
 
-   <div class="project-text">
-  <h2>12-18.10.2026</h2>
-  <h2>
-European Music Collective Fall Tour,
-   Düsseldorf,
-    Eindhoven,
-    Liege,
-    Brussels. </h2>
-</div>
+
+  <div class="event">
+    <div class="event-date">
+      <span class="day">14</span>
+      <span class="month">OCT</span>
+    </div>
+
+    <div class="event-info">
+      <h2>What Is Contemporary?</h2>
+      <p>Workshop — Intro in Situ</p>
+    </div>
   </div>
 
-  <!-- Contemporary Workshop -->
-<div class="project">
-  <div class="image-box">
-    <img src="INTROFALL26.jpg" alt="IntroFall26">
-    
+
+  <div class="event">
+    <div class="event-date">
+      <span class="day">19</span>
+      <span class="month">OCT</span>
+    </div>
+
+    <div class="event-info">
+      <h2>Sequenze: Embodying Time</h2>
+      <p>Solo concert — Intro in Situ</p>
+    </div>
   </div>
 
-   <div class="project-text"> 
-  <h2>INTRO IN SITU — FALL PROGRAMME 2026</h>
 
- <h2>14.10.2026</h2>
-<h2>WHAT IS CONTEMPORARY? — WORKSHOP
-</h2>
-<h2>19.10.2026</h2>
-<h2>SEQUENZE: EMBODYING TIME — SOLO CONCERT</h2>
- 
+  <div class="agenda-month">NOVEMBER</div>
 
-   </div>
+  <div class="event">
+    <div class="event-date">
+      <span class="day">TBA</span>
+      <span class="month">NOV</span>
+    </div>
 
-  <div class="back-wrapper">
-  </div>
-</div>
-    
-  </div>
-  </div> 
-
-    <!-- LENSEMBLE -->
-<div class="project">
-  <div class="image-box">
-    <img src="kaunas.jpg" alt="fantiniasax">
-    
+    <div class="event-info">
+      <h2>LENsemble</h2>
+      <p>Charleroi, Belgium — Lithuanian Music Network for Contemporary Music</p>
+    </div>
   </div>
 
-   <div class="project-text"> 
-  <h2>NOVEMBER TBA</h>
-
-<h2>with LENSEMBLE, Lithuanian Network for Contemporary Music - CONCERT in CHARLEROI.
-</h2>
- 
-
-   </div>
-
-  <div class="back-wrapper">
-  </div>
 </div>
 
   <!-- BACK -->
